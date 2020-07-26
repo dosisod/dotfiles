@@ -25,9 +25,7 @@ shopt -s globstar
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 
-if [ -f ~/.bash_aliases ]; then
-	. ~/.bash_aliases
-fi
+[ -f ~/.bash_aliases ] && . ~/.bash_aliases
 
 #actual bashrc file
 
@@ -55,12 +53,12 @@ alias vv="source .venv/bin/activate"
 alias mvv="python3 -m venv .venv && source .venv/bin/activate"
 
 #makes accessing files easier
-alias vimrc="vim.gtk -i NONE ~/.vimrc"
-alias bashrc="vim.gtk -i NONE ~/.bashrc"
-alias todo="vim.gtk -i NONE ~/todo"
-alias v="vim.gtk -i NONE"
-alias vi="vim.gtk -i NONE"
-alias vim="vim.gtk -i NONE"
+alias nvimrc="nvim -i NONE ~/.config/nvim/init.vim"
+alias bashrc="nvim -i NONE ~/.bashrc"
+alias todo="nvim -i NONE ~/todo"
+alias v="nvim -i NONE"
+alias vi="nvim -i NONE"
+alias vim="nvim -i NONE"
 
 #git related aliases
 alias gpom="git push origin master"

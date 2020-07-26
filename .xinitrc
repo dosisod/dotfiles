@@ -1,3 +1,5 @@
+export GTK_THEME=Adwaita:dark
+
 xset r rate 300 25
 
 feh --no-fehbg --bg-scale ~/Downloads/BG.png
