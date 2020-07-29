@@ -1,5 +1,5 @@
 "to install vim-plug, follow instructions at https://github.com/junegunn/vim-plug/wiki/tutorial
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.cache/vim/')
 
 Plug 'crusoexia/vim-monokai'
 Plug 'airblade/vim-gitgutter'
