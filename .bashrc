@@ -29,6 +29,9 @@ alias grep="grep --color=auto"
 
 #actual bashrc file
 
+export EDITOR=nvim
+export VISUAL=nvim
+
 export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=1;34:ln=32:bn=32:se=0"
 
 #enable flask hotreloading, disable dotnet telemetry
@@ -123,3 +126,5 @@ function getvimrc() {
 }
 
 [ -f ~/.config/.fzf/fzf.bash ] && source ~/.config/.fzf/fzf.bash
+
+[ -f ~/.config/git/completion.bash ] && source ~/.config/git/completion.bash
