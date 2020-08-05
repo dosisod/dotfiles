@@ -21,14 +21,14 @@ command! PU PlugUpdate
 
 syntax on
 
-"set background=dark
-"colorscheme gruvbox
+set background=dark
+colorscheme gruvbox
 
 "colorscheme monokai
 "let g:monokai_term_italic = 0
 
-set background=light
-colorscheme PaperColor
+"set background=light
+"colorscheme PaperColor
 
 "enable when using base16 fonts
 "let base16colorspace=16
@@ -123,8 +123,8 @@ map <M-DOWN> :bn<CR>
 map! <M-DOWN> <ESC>:bn<CR>a
 
 "open nvimrc/bashrc from inside vim
-map :; :sp ~/.config/nvim/init.vim<CR>
-map ~~ :sp ~/.bashrc<CR>
+command! V sp ~/.config/nvim/init.vim
+command! B sp ~/.bashrc
 
 "used for jinja2 templates
 inoremap {% {%%}<LEFT><LEFT><SPACE><LEFT><SPACE>
@@ -157,13 +157,9 @@ imap <C-S> <ESC>:w<CR>a
 map <C-S> :w<CR>
 
 "makes quiting easier
-map :qq :q!<CR>
-map :Q :qa!<CR>
-map :WQ :wq<CR>
-map :Wq :wq<CR>
-map :wQ :wq<CR>
-map :W :w<CR>
-map :ew :w<CR>
+command! WQ wq
+command! Wq wq
+command! W w
 
 "allows for shift+home like capabilities
 inoremap <A-HOME> <ESC>v<HOME>
@@ -220,7 +216,11 @@ inoremap <expr> <LEFT> (col(".")==1) ? "<UP><END>" : "<LEFT>"
 inoremap <expr> <RIGHT> (col(".")==col("$")) ? "<DOWN><HOME>" : "<RIGHT>"
 
 "bad habbits
-map <UP> <nop>
-map <DOWN> <nop>
-map <LEFT> <nop>
-map <RIGHT> <nop>
+map <up> :qa!<CR>
+map <down> :qa!<CR>
+map <left> :qa!<CR>
+map <right> :qa!<CR>
+imap <up> <ESC>:qa!<CR>
+imap <down> <ESC>:qa!<CR>
+imap <left> <ESC>:qa!<CR>
+imap <right> <ESC>:qa!<CR>
