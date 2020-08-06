@@ -85,13 +85,9 @@ alias src="source ~/.bashrc"
 alias :q="exit"
 alias cls="clear && ls"
 alias cgs="clear && git status"
-alias c="exit"
 alias sl="ls"
-alias r="./run"
-alias p="cat"
 alias cdd="cd .."
 alias ..="cd .."
-alias plant="netstat -plant"
 alias sedri="find . -type f -print0 | xargs -0 sed -i"
 function mk() { mkdir $@ && cd $@; }
 alias k9="kill -9"
@@ -106,14 +102,8 @@ function grepr() { _grep_wrapper -r $@ .; }
 function greprf() { _grep_wrapper -rF $@ .; }
 function lst() { tree -fi $@ | grep -v "pycache\|node_modules"; }
 
-alias music="2>/dev/null 2>&1 php -S 0.0.0.0:1234 -t ~/Music/ &"
 alias lsl="ls -Alh"
 alias psx="ps aux | grep"
-alias tss="tsc --build tsconfig.json"
-alias tsw="tsc --build tsconfig.json -w"
-alias ccmake="cmake --build ."
-
-alias chrome="chromium-browser"
 
 alias stretch="(sleep 3600; notify-send -u critical -i x 'Hey!' 'Time to stretch!') &"
 
@@ -125,6 +115,6 @@ function getvimrc() {
 	curl https://raw.githubusercontent.com/dosisod/vimrc/master/vimrc > ~/.vimrc
 }
 
-[ -f ~/.config/.fzf/fzf.bash ] && source ~/.config/.fzf/fzf.bash
-
 [ -f ~/.config/git/completion.bash ] && source ~/.config/git/completion.bash
+
+[ -f ~/.config/.fzf/fzf.bash ] && source ~/.config/.fzf/fzf.bash

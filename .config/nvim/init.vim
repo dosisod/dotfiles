@@ -1,11 +1,9 @@
 "to install vim-plug, follow instructions at https://github.com/junegunn/vim-plug/wiki/tutorial
 call plug#begin('~/.cache/vim/')
 
-Plug 'crusoexia/vim-monokai'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'dir': '~/.config/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'chriskempson/base16-vim'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'embear/vim-localvimrc'
 Plug 'tpope/vim-surround'
@@ -24,14 +22,8 @@ syntax on
 set background=dark
 colorscheme gruvbox
 
-"colorscheme monokai
-"let g:monokai_term_italic = 0
-
 "set background=light
 "colorscheme PaperColor
-
-"enable when using base16 fonts
-"let base16colorspace=16
 
 set updatetime=100
 
