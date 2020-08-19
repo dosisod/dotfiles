@@ -9,6 +9,7 @@ Plug 'embear/vim-localvimrc'
 Plug 'tpope/vim-surround'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
+Plug 'posva/vim-vue'
 
 call plug#end()
 
@@ -30,6 +31,8 @@ set updatetime=100
 nnoremap <SPACE> :FZF<CR>
 inoremap <C-@> <C-N><C-N>
 
+let g:vue_pre_processors = ['scss']
+
 autocmd BufNewFile,BufRead *.ts set syntax=javascript
 autocmd BufNewFile,BufRead *.pyi set syntax=python
 
@@ -50,9 +53,11 @@ set shiftwidth=4
 set showcmd
 set wildmenu
 set scrolloff=2
+set sidescrolloff=2
 set lazyredraw
 set ignorecase
 set smartcase
+set dir=~/.cache/swp/
 filetype plugin indent off "disable tab options set by plugins
 
 "add clipboard capabilities if available
@@ -78,27 +83,6 @@ set list
 
 set cursorline
 set guicursor=
-
-"using F1-9 keys switches buffers in all modes
-"when switching in insert mode, you stay in insert mode
-map <F1> :b1<CR>
-map! <F1> <ESC>:b1<CR>a
-map <F2> :b2<CR>
-map! <F2> <ESC>:b2<CR>a
-map <F3> :b3<CR>
-map! <F3> <ESC>:b3<CR>a
-map <F4> :b4<CR>
-map! <F4> <ESC>:b4<CR>a
-map <F5> :b5<CR>
-map! <F5> <ESC>:b5<CR>a
-map <F6> :b6<CR>
-map! <F6> <ESC>:b6<CR>a
-map <F7> :b7<CR>
-map! <F7> <ESC>:b7<CR>a
-map <F8> :b8<CR>
-map! <F8> <ESC>:b8<CR>a
-map <F9> :b9<CR>
-map! <F9> <ESC>:b9<CR>a
 
 "ALT LEFT and ALT RIGHT to move one tab left/right
 map <M-LEFT> gT
@@ -185,9 +169,6 @@ tnoremap <silent> <C-S-LEFT> <C-W><
 tnoremap <silent> <C-S-RIGHT> <C-W>>
 tnoremap <silent> <C-S-UP> <C-W>+
 tnoremap <silent> <C-S-DOWN> <C-W>-
-
-nnoremap `` :ter ++close ++curwin<CR>
-tnoremap <ESC> <C-W>
 
 "hitting K instead of k is annoying
 map K k

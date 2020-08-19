@@ -38,9 +38,6 @@ export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=1;34:ln=32:bn=32:se=0"
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export FLASK_DEBUG=1
 
-export NODE_PATH="/usr/bin/node"
-export CHROME_BIN="/usr/bin/chromium-browser"
-
 #disable certain files
 export PYTHONSTARTUP=$HOME/.config/pythonrc.py
 export LESSHISTFILE=/dev/null
@@ -56,17 +53,15 @@ alias vv="source .venv/bin/activate"
 alias mvv="python3 -m venv .venv && source .venv/bin/activate"
 
 #makes accessing files easier
-alias nvimrc="nvim -i NONE ~/.config/nvim/init.vim"
-alias bashrc="nvim -i NONE ~/.bashrc"
-alias todo="nvim -i NONE ~/todo"
-alias v="nvim -i NONE"
-alias vi="nvim -i NONE"
-alias vim="nvim -i NONE"
+alias nvimrc="$EDITOR -i NONE ~/.config/nvim/init.vim"
+alias bashrc="$EDITOR -i NONE ~/.bashrc"
+alias todo="$EDITOR -i NONE ~/todo"
+alias v="$EDITOR -i NONE"
+alias vi="$EDITOR-i NONE"
+alias vim="$EDITOR -i NONE"
 
 #git related aliases
 alias gpom="git push origin master"
-alias gpo="git push origin"
-alias gp="git push"
 alias gcm="git commit -m"
 alias ga="git add"
 alias gau="git add -u"
@@ -74,21 +69,19 @@ alias gd="git diff"
 alias gdd="git diff --cached"
 alias gs="git status"
 alias gl="git log --name-only"
-alias gc="git checkout"
 alias grm="git rm"
 alias goof="git reset --soft HEAD~1"
 alias gtfo="git checkout master -f"
-function gg() { cd ~/git/$@; }
 
 #system related aliases
 alias src="source ~/.bashrc"
 alias :q="exit"
 alias cls="clear && ls"
-alias cgs="clear && git status"
 alias sl="ls"
 alias cdd="cd .."
 alias ..="cd .."
 alias sedri="find . -type f -print0 | xargs -0 sed -i"
+alias sedr="find . -type f -print0 | xargs -0 sed"
 function mk() { mkdir $@ && cd $@; }
 alias k9="kill -9"
 alias g="_grep_wrapper"
@@ -106,14 +99,6 @@ alias lsl="ls -Alh"
 alias psx="ps aux | grep"
 
 alias stretch="(sleep 3600; notify-send -u critical -i x 'Hey!' 'Time to stretch!') &"
-
-function getbashrc() {
-	curl https://raw.githubusercontent.com/dosisod/bashrc/master/bashrc > ~/.bashrc
-}
-
-function getvimrc() {
-	curl https://raw.githubusercontent.com/dosisod/vimrc/master/vimrc > ~/.vimrc
-}
 
 [ -f ~/.config/git/completion.bash ] && source ~/.config/git/completion.bash
 
