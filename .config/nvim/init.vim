@@ -35,13 +35,13 @@ let g:vue_pre_processors = ['scss']
 
 autocmd BufNewFile,BufRead *.ts set syntax=javascript
 autocmd BufNewFile,BufRead *.pyi set syntax=python
+autocmd BufNewFile,BufRead *.sk set syntax=python
 
 "setup splits
 set splitbelow
 set splitright
 
 "sane defaults
-set nocompatible
 set binary
 set noeol
 set nowrap
@@ -66,12 +66,12 @@ if has('unnamedplus')
 endif
 
 "added possible paths for `gf` command
-set path=.,templates/,static/,,
-set suffixesadd=.py,.html,.js,.min.js
+set path=./,/usr/include/
 
 "changes search functionality/colors
 set incsearch
 set hlsearch
+set gdefault
 
 "whitespace highlighters
 hi NoWhitespace term=standout cterm=standout ctermfg=196 ctermbg=234
@@ -84,14 +84,6 @@ set list
 set cursorline
 set guicursor=
 
-"ALT LEFT and ALT RIGHT to move one tab left/right
-map <M-LEFT> gT
-map! <M-LEFT> <ESC>gTa
-tmap <ESC>[1;3D <C-W>:tabp<CR>
-map <M-RIGHT> gt
-map! <M-RIGHT> <ESC>gta
-tmap <ESC>[1;3C <C-W>:tabn<CR>
-
 "ALT UP and ALT DOWN to switch up and down buffers
 map <M-UP> :bp<CR>
 map! <M-UP> <ESC>:bp<CR>a
@@ -102,21 +94,10 @@ map! <M-DOWN> <ESC>:bn<CR>a
 command! V sp ~/.config/nvim/init.vim
 command! B sp ~/.bashrc
 
-"used for jinja2 templates
-inoremap {% {%%}<LEFT><LEFT><SPACE><LEFT><SPACE>
-inoremap {{ {{}}<LEFT><LEFT><SPACE><LEFT><SPACE>
-
 "auto block creation
 inoremap {<CR> {<CR><TAB><END><CR><BS>}<ESC>kI
 inoremap (<CR> (<CR><TAB><END><CR><BS>)<ESC>kI
 inoremap [<CR> [<CR><TAB><END><CR><BS>]<ESC>kI
-
-"auto close bracket
-inoremap <expr> ) strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
-inoremap <expr> ] strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
-inoremap <expr> } strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
-
-iabbrev MM <<
 
 "below copied from:
 "https://vim.fandom.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
@@ -137,16 +118,6 @@ command! WQ wq
 command! Wq wq
 command! W w
 
-"allows for shift+home like capabilities
-inoremap <A-HOME> <ESC>v<HOME>
-map <A-HOME> v<HOME>
-inoremap <A-END> <ESC>v<END>h
-map <A-END> v<END>h
-
-"enter works like J and backspace works like H, make them drop into insert mode instead
-noremap <BS> i<BS>
-noremap <expr> <CR> col(".") == col("$")-1 ? "o" : "i<CR>"
-
 "hitting tab when in normal/command mode will insert a tab at the start of the line
 noremap <TAB> I<TAB><ESC>
 noremap <S-TAB> <<
@@ -156,19 +127,11 @@ nnoremap <C-J> <C-W>j
 nnoremap <C-K> <C-W>k
 nnoremap <C-L> <C-W>l
 nnoremap <C-H> <C-W>h
-tnoremap <C-J> <C-W>j
-tnoremap <C-K> <C-W>k
-tnoremap <C-L> <C-W>l
-tnoremap <C-H> <C-W>h
 
 nnoremap <silent> <C-S-LEFT> <C-W><
 nnoremap <silent> <C-S-RIGHT> <C-W>>
 nnoremap <silent> <C-S-UP> <C-W>+
 nnoremap <silent> <C-S-DOWN> <C-W>-
-tnoremap <silent> <C-S-LEFT> <C-W><
-tnoremap <silent> <C-S-RIGHT> <C-W>>
-tnoremap <silent> <C-S-UP> <C-W>+
-tnoremap <silent> <C-S-DOWN> <C-W>-
 
 "hitting K instead of k is annoying
 map K k
@@ -178,15 +141,6 @@ command! S source ~/.config/nvim/init.vim
 
 command! Spaces4 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 command! Spaces2 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-
-"hitting j/k at top and bottom of buffer goes to EOL or SOL
-nnoremap <expr> j (line(".")==line("$")) ? "$" : "j"
-inoremap <expr> <DOWN> (line(".")==line("$")) ? "<END>" : "<DOWN>"
-nnoremap <expr> k (line(".")==1) ? "^" : "k"
-inoremap <expr> <UP> (line(".")==1) ? "<HOME>" : "<UP>"
-
-inoremap <expr> <LEFT> (col(".")==1) ? "<UP><END>" : "<LEFT>"
-inoremap <expr> <RIGHT> (col(".")==col("$")) ? "<DOWN><HOME>" : "<RIGHT>"
 
 "bad habbits
 map <up> :qa!<CR>
