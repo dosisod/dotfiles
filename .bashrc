@@ -57,7 +57,7 @@ alias nvimrc="$EDITOR -i NONE ~/.config/nvim/init.vim"
 alias bashrc="$EDITOR -i NONE ~/.bashrc"
 alias todo="$EDITOR -i NONE ~/todo"
 alias v="$EDITOR -i NONE"
-alias vi="$EDITOR-i NONE"
+alias vi="$EDITOR -i NONE"
 alias vim="$EDITOR -i NONE"
 
 #git related aliases

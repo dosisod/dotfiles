@@ -9,7 +9,6 @@ Plug 'embear/vim-localvimrc'
 Plug 'tpope/vim-surround'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
-Plug 'posva/vim-vue'
 
 call plug#end()
 
@@ -29,13 +28,12 @@ colorscheme gruvbox
 set updatetime=100
 
 nnoremap <SPACE> :FZF<CR>
-inoremap <C-@> <C-N><C-N>
 
-let g:vue_pre_processors = ['scss']
+au BufNewFile,BufRead *.ts set syntax=javascript
+au BufNewFile,BufRead *.pyi set syntax=python
+au BufNewFile,BufRead *.sk set syntax=python
 
-autocmd BufNewFile,BufRead *.ts set syntax=javascript
-autocmd BufNewFile,BufRead *.pyi set syntax=python
-autocmd BufNewFile,BufRead *.sk set syntax=python
+au TermOpen * setlocal nonumber norelativenumber
 
 "setup splits
 set splitbelow
@@ -105,28 +103,28 @@ inoremap [<CR> [<CR><TAB><END><CR><BS>]<ESC>kI
 set completeopt=longest,menuone
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<TAB>"
-inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
-
-"makes saving easier
-"requires putting: "stty -ixon" into bashrc
-imap <C-S> <ESC>:w<CR>a
-map <C-S> :w<CR>
 
 "makes quiting easier
 command! WQ wq
 command! Wq wq
 command! W w
 
-"hitting tab when in normal/command mode will insert a tab at the start of the line
-noremap <TAB> I<TAB><ESC>
-noremap <S-TAB> <<
-
 "switch between buffers easily
 nnoremap <C-J> <C-W>j
 nnoremap <C-K> <C-W>k
 nnoremap <C-L> <C-W>l
 nnoremap <C-H> <C-W>h
+
+tnoremap <ESC> <C-\><C-N>
+tnoremap <C-J> <C-W>j
+tnoremap <C-K> <C-W>k
+tnoremap <C-L> <C-W>l
+tnoremap <C-H> <C-W>h
+
+tnoremap <C-H> <C-\><C-N><C-W>h
+tnoremap <C-J> <C-\><C-N><C-W>j
+tnoremap <C-K> <C-\><C-N><C-W>k
+tnoremap <C-L> <C-\><C-N><C-W>l
 
 nnoremap <silent> <C-S-LEFT> <C-W><
 nnoremap <silent> <C-S-RIGHT> <C-W>>
