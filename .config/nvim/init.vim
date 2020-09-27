@@ -9,6 +9,7 @@ Plug 'embear/vim-localvimrc'
 Plug 'tpope/vim-surround'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
+Plug 'dosisod/vim-skull'
 
 call plug#end()
 
@@ -31,7 +32,7 @@ nnoremap <SPACE> :FZF<CR>
 
 au BufNewFile,BufRead *.ts set syntax=javascript
 au BufNewFile,BufRead *.pyi set syntax=python
-au BufNewFile,BufRead *.sk set syntax=python
+au BufNewFile,BufRead *.sk set syntax=skull
 
 au TermOpen * setlocal nonumber norelativenumber
 
