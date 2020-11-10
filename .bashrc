@@ -29,6 +29,9 @@ alias grep="grep --color=auto"
 
 #actual bashrc file
 
+set -o vi
+bind -m vi-insert 'Control-l: clear-screen'
+
 export EDITOR=nvim
 export VISUAL=nvim
 
