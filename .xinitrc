@@ -5,7 +5,7 @@ xcompmgr &
 
 feh --no-fehbg --bg-scale ~/Downloads/BG.png
 
-$(/home/noot/git/dwm-stuff/bar.sh) &
+$(/home/noot/git/dwm/scripts/bar.sh) &
 
 old_sha=$(sha1sum $(which dwm))
 new_sha=""

@@ -41,6 +41,9 @@ export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=1;34:ln=32:bn=32:se=0"
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export FLASK_DEBUG=1
 
+#path for gnome keyring
+export SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+
 #disable certain files
 export PYTHONSTARTUP=$HOME/.config/pythonrc.py
 export LESSHISTFILE=/dev/null
@@ -48,6 +51,8 @@ export NODE_REPL_HISTORY=/dev/null
 
 #allows for control+s in vim
 stty -ixon
+
+cd $(cat /tmp/__pwd 2> /dev/null)
 
 export PS1="\[\e[1;31m\]\u \[\e[1;34m\]\W \$(__current_branch=\$(git branch 2> /dev/null | grep -F \"*\" | cut -c 3-);if [ \"\$__current_branch\" == \"master\" ]; then echo \"\[\e[0;32m\](\$__current_branch) \"; elif [ ! -z \"\$__current_branch\" ]; then echo \"\[\e[0;33m\](\$__current_branch) \";fi)\[\e[38;5;244m\]$ \[\e[0m\]"
 
@@ -65,6 +70,7 @@ alias vim="$EDITOR -i NONE"
 
 #git related aliases
 alias gpom="git push origin master"
+alias gpoh="git push origin HEAD"
 alias gcm="git commit -m"
 alias ga="git add"
 alias gau="git add -u"
@@ -77,6 +83,7 @@ alias goof="git reset --soft HEAD~1"
 alias gtfo="git checkout master -f"
 
 #system related aliases
+alias m="pwd > /tmp/__pwd"
 alias src="source ~/.bashrc"
 alias :q="exit"
 alias cls="clear && ls"
