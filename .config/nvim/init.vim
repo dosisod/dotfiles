@@ -30,7 +30,6 @@ set updatetime=100
 
 nnoremap <SPACE> :FZF<CR>
 
-au BufNewFile,BufRead *.ts set syntax=javascript
 au BufNewFile,BufRead *.pyi set syntax=python
 au BufNewFile,BufRead *.sk set syntax=skull
 
@@ -57,6 +56,8 @@ set lazyredraw
 set ignorecase
 set smartcase
 set dir=~/.cache/swp/
+set undofile
+set undodir=/tmp
 filetype plugin indent off "disable tab options set by plugins
 
 "add clipboard capabilities if available
@@ -138,8 +139,8 @@ map K k
 "makes sourcing vimrc easier
 command! S source ~/.config/nvim/init.vim
 
-command! Spaces4 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-command! Spaces2 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+command! S4 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+command! S2 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 
 "bad habbits
 map <up> :qa!<CR>
