@@ -40,8 +40,6 @@ set splitbelow
 set splitright
 
 "sane defaults
-set binary
-set noeol
 set nowrap
 set number relativenumber
 set autoindent

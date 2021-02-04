@@ -20,4 +20,3 @@ while true; do
 	fi
 	old_sha=$(sha1sum $(which dwm))
 done
-
