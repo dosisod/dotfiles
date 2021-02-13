@@ -54,7 +54,21 @@ stty -ixon
 
 cd $(cat /tmp/__pwd 2> /dev/null)
 
-export PS1="\[\e[1;31m\]\u \[\e[1;34m\]\W \$(__current_branch=\$(git branch 2> /dev/null | grep -F \"*\" | cut -c 3-);if [ \"\$__current_branch\" == \"master\" ]; then echo \"\[\e[0;32m\](\$__current_branch) \"; elif [ ! -z \"\$__current_branch\" ]; then echo \"\[\e[0;33m\](\$__current_branch) \";fi)\[\e[38;5;244m\]$ \[\e[0m\]"
+__git_branch() {
+	branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
+
+	[ "$branch" = "master" ] &&
+		printf "\e[0;32m(master) " || {
+		[ ! -z "$branch" ] &&
+			printf "\e[0;33m($branch) ";
+	}
+}
+
+__status_code() {
+	[ "$1" != "0" ] && echo "[$1] "
+}
+
+export PS1="\$(__status_code \$?)\[\e[1;31m\]\u \[\e[1;34m\]\W \$(__git_branch)\[\e[38;5;244m\]$ \[\e[0m\]"
 
 alias p3="python3"
 alias vv="source .venv/bin/activate"
