@@ -110,6 +110,7 @@ function mk() { mkdir $@ && cd $@; }
 alias k9="kill -9"
 alias g="_grep_wrapper"
 alias less="less -R"
+alias gdb="gdb -ex='set history save on' -ex='set history filename /tmp/gdb_history'"
 
 function _grep_wrapper() {
 	grep $@ -E --color=always --exclude-dir={\*.venv\*,\*node_modules\*,\*\.git\*,\*.\*py\*} | grep -v --color=always "Binary file";
