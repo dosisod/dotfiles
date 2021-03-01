@@ -64,7 +64,7 @@ if has('unnamedplus')
 endif
 
 "added possible paths for `gf` command
-set path=./,/usr/include/
+set path=,./,/usr/include/
 
 "changes search functionality/colors
 set incsearch
@@ -95,7 +95,6 @@ command! B sp ~/.bashrc
 "auto block creation
 inoremap {<CR> {<CR><TAB><END><CR><BS>}<ESC>kI
 inoremap (<CR> (<CR><TAB><END><CR><BS>)<ESC>kI
-inoremap [<CR> [<CR><TAB><END><CR><BS>]<ESC>kI
 
 "below copied from:
 "https://vim.fandom.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
