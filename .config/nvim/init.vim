@@ -28,7 +28,8 @@ colorscheme gruvbox
 
 set updatetime=100
 
-nnoremap <SPACE> :FZF<CR>
+nnoremap <SPACE> :GFiles<CR>
+nnoremap <C-SPACE> :FZF<CR>
 
 au BufNewFile,BufRead *.pyi set syntax=python
 au BufNewFile,BufRead *.sk set syntax=skull
