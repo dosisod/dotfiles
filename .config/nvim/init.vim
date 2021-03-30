@@ -30,6 +30,8 @@ set updatetime=100
 nnoremap <SPACE> :GFiles<CR>
 nnoremap <C-SPACE> :FZF<CR>
 
+let g:fzf_preview_window = ''
+
 au BufNewFile,BufRead *.pyi set syntax=python
 au BufNewFile,BufRead *.sk set syntax=skull
 
