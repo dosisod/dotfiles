@@ -65,6 +65,9 @@ if has('unnamedplus')
 	set clipboard=unnamed,unnamedplus
 endif
 
+set mousemodel=extend
+set mouse=a
+
 "added possible paths for `gf` command
 set path=,./,/usr/include/
 
