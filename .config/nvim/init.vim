@@ -6,7 +6,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.config/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'tpope/vim-surround'
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
 Plug 'dosisod/vim-skull'
 
@@ -21,11 +20,15 @@ syntax on
 
 set background=dark
 colorscheme gruvbox
+set tgc
 
-"set background=light
-"colorscheme PaperColor
-
+"gitgutter settings
 set updatetime=100
+hi GruvBoxRedSign guifg=#fb4934 guibg=bg
+hi GruvBoxAquaSign guifg=#8ec07c guibg=bg
+hi GruvBoxGreenSign guifg=#b8bb26 guibg=bg
+hi SignColumn guibg=bg
+hi CursorLineNr guibg=bg
 
 nnoremap <SPACE> :GFiles<CR>
 nnoremap <C-SPACE> :FZF<CR>
@@ -81,7 +84,7 @@ hi NoWhitespace term=standout cterm=standout ctermfg=196 ctermbg=234
 hi SpecialKey term=bold ctermfg=237
 match noWhitespace '\s\+$'
 set listchars=tab:→\ 
-set fillchars=vert:│
+set fillchars=vert:│,eob:\ 
 set list
 
 set cursorline
