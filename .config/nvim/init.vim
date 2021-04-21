@@ -29,6 +29,8 @@ hi GruvBoxAquaSign guifg=#8ec07c guibg=bg
 hi GruvBoxGreenSign guifg=#b8bb26 guibg=bg
 hi SignColumn guibg=bg
 hi CursorLineNr guibg=bg
+nmap <leader>j :GitGutterNextHunk<CR>
+nmap <leader>k :GitGutterPrevHunk<CR>
 
 nnoremap <SPACE> :GFiles<CR>
 nnoremap <C-SPACE> :FZF<CR>
