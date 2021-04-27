@@ -143,6 +143,8 @@ nnoremap <silent> <C-S-DOWN> <C-W>-
 "hitting K instead of k is annoying
 map K k
 map Q q
+imap <F1> <nop>
+nmap <F1> <nop>
 
 "makes sourcing vimrc easier
 command! S source ~/.config/nvim/init.vim
