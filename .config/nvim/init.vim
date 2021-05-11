@@ -37,6 +37,9 @@ nnoremap <C-SPACE> :FZF<CR>
 
 let g:fzf_preview_window = ''
 
+imap <C-x><C-l> <plug>(fzf-complete-line)
+imap <C-x><C-p> <plug>(fzf-complete-path)
+
 au BufNewFile,BufRead *.pyi set syntax=python
 au BufNewFile,BufRead *.sk set syntax=skull
 
