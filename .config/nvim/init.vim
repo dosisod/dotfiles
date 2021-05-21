@@ -45,6 +45,9 @@ au BufNewFile,BufRead *.sk set syntax=skull
 
 au TermOpen * setlocal nonumber norelativenumber
 
+au FileType python,java setlocal ts=4 sw=4 sts=4 expandtab
+au FileType typescript,html,javascript setlocal ts=2 sw=2 sts=2 expandtab
+
 "setup splits
 set splitbelow
 set splitright
