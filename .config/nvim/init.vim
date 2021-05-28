@@ -42,11 +42,12 @@ imap <C-x><C-p> <plug>(fzf-complete-path)
 
 au BufNewFile,BufRead *.pyi set syntax=python
 au BufNewFile,BufRead *.sk set syntax=skull
+au BufNewFile,BufRead *.c set syntax=c
 
 au TermOpen * setlocal nonumber norelativenumber
 
 au FileType python,java setlocal ts=4 sw=4 sts=4 expandtab
-au FileType typescript,html,javascript setlocal ts=2 sw=2 sts=2 expandtab
+au FileType typescript,html,javascript,css,scss,json,cpp,yaml,skull setlocal ts=2 sw=2 sts=2 expandtab
 
 "setup splits
 set splitbelow
