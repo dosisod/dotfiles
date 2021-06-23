@@ -1,5 +1,5 @@
 "to install vim-plug, follow instructions at https://github.com/junegunn/vim-plug/wiki/tutorial
-call plug#begin('~/.cache/vim/')
+call plug#begin('~/.cache/nvim/')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'dir': '~/.config/.fzf', 'do': './install --all' }
@@ -8,6 +8,7 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'tpope/vim-surround'
 Plug 'morhetz/gruvbox'
 Plug 'dosisod/vim-skull'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
 
@@ -42,12 +43,22 @@ imap <C-x><C-p> <plug>(fzf-complete-path)
 
 au BufNewFile,BufRead *.pyi set syntax=python
 au BufNewFile,BufRead *.sk set syntax=skull
-au BufNewFile,BufRead *.c set syntax=c
+au BufNewFile,BufRead *.c set syntax=c filetype=c
+au BufNewFile,BufRead *.h set syntax=c filetype=c
 
 au TermOpen * setlocal nonumber norelativenumber
 
 au FileType python,java setlocal ts=4 sw=4 sts=4 expandtab
-au FileType typescript,html,javascript,css,scss,json,cpp,yaml,skull setlocal ts=2 sw=2 sts=2 expandtab
+au FileType typescript,html,javascript,css,scss,json,yaml,skull setlocal ts=2 sw=2 sts=2 expandtab
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "c" },
+  highlight = {
+    enable = true
+  }
+}
+EOF
 
 "setup splits
 set splitbelow
