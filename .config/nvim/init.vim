@@ -45,6 +45,7 @@ au BufNewFile,BufRead *.pyi set syntax=python
 au BufNewFile,BufRead *.sk set syntax=skull
 au BufNewFile,BufRead *.c set syntax=c filetype=c
 au BufNewFile,BufRead *.h set syntax=c filetype=c
+au BufNewFile,BufRead *.ll set syntax=llvm filetype=llvm
 
 au TermOpen * setlocal nonumber norelativenumber
 
@@ -92,7 +93,7 @@ set mousemodel=extend
 set mouse=a
 
 "added possible paths for `gf` command
-set path=,./,/usr/include/
+set path=,./,/usr/include/,/usr/include/llvm-c-10
 
 "changes search functionality/colors
 set incsearch
@@ -130,6 +131,8 @@ inoremap (<CR> (<CR><TAB><END><CR><BS>)<ESC>kI
 set completeopt=longest,menuone
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 
 "makes quiting easier
 command! WQ wq
@@ -170,12 +173,25 @@ command! S source ~/.config/nvim/init.vim
 command! S4 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 command! S2 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 
+"enable GDB like movement when in command line mode
+cnoremap <C-b> <left>
+cnoremap <C-f> <right>
+cnoremap <C-S-f> <C-f>
+
 "bad habbits
-map <up> :qa!<CR>
-map <down> :qa!<CR>
-map <left> :qa!<CR>
-map <right> :qa!<CR>
-imap <up> <ESC>:qa!<CR>
-imap <down> <ESC>:qa!<CR>
-imap <left> <ESC>:qa!<CR>
-imap <right> <ESC>:qa!<CR>
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+cmap <up> <nop>
+cmap <down> <nop>
+cmap <left> <nop>
+cmap <right> <nop>
+tmap <up> <nop>
+tmap <down> <nop>
+tmap <left> <nop>
+tmap <right> <nop>

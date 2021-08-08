@@ -47,6 +47,7 @@ export SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
 #disable certain files
 export PYTHONSTARTUP=$HOME/.config/pythonrc.py
 export LESSHISTFILE=/dev/null
+export LESS="-FRIX~"
 export NODE_REPL_HISTORY=/dev/null
 
 #allows for control+s in vim
@@ -96,6 +97,9 @@ alias grm="git rm"
 alias goof="git reset --soft HEAD~1"
 alias gtfo="git checkout master -f"
 
+alias d="doas docker"
+alias dk="doas docker-compose"
+
 #system related aliases
 alias m="pwd > /tmp/__pwd"
 alias src="source ~/.bashrc"
@@ -109,11 +113,10 @@ alias sedr="find . -type f -print0 | xargs -0 sed"
 function mk() { mkdir $@ && cd $@; }
 alias k9="kill -9"
 alias g="_grep_wrapper"
-alias less="less -R"
 alias gdb="gdb -ex='set history save on' -ex='set history filename /tmp/gdb_history'"
 
 function _grep_wrapper() {
-	grep $@ -E --color=always --exclude-dir={\*.venv\*,\*node_modules\*,\*\.git\*,\*.\*py\*} | grep -v --color=always "Binary file";
+	grep $@ -IE --color=auto --exclude-dir={\*.venv\*,cosmopolitan,\*node_modules\*,\*\.git\*,\*.\*py\*};
 }
 
 function grepr() { _grep_wrapper -r $@ .; }
