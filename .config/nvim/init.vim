@@ -9,6 +9,7 @@ Plug 'tpope/vim-surround'
 Plug 'morhetz/gruvbox'
 Plug 'dosisod/vim-skull'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -129,7 +130,8 @@ inoremap (<CR> (<CR><TAB><END><CR><BS>)<ESC>kI
 "https://vim.fandom.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
 "https://github.com/maralla/completor.vim
 set completeopt=longest,menuone
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <CR> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<Tab>"
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
