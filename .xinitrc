@@ -1,3 +1,5 @@
+#!/bin/sh
+
 export GTK_THEME=Adwaita:dark
 
 xset r rate 300 25
@@ -10,6 +12,9 @@ $(/home/noot/git/dwm/scripts/bar.sh) &
 
 old_sha=$(sha1sum $(which dwm))
 new_sha=""
+
+xset s 300
+/home/noot/git/xssstate/xsidle.sh slock &
 
 while true; do
 	if [ "$old_sha" != "$new_sha" ]
