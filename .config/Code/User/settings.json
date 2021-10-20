@@ -1,0 +1,47 @@
+{
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "code-runner.enableAppInsights": false,
+  "update.mode": "none",
+  "extensions.autoUpdate": false,
+  "extensions.ignoreRecommendations": true,
+  "window.menuBarVisibility": "hidden",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "workbench.colorTheme": "Gruvbox Dark (Hard)",
+  "window.zoomLevel": -1,
+  "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m",
+  "editor.minimap.enabled": false,
+  "editor.lineNumbers": "relative",
+  "editor.fontFamily": "'JetBrains Mono', monospace",
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  "workbench.startupEditor": "none",
+  "breadcrumbs.enabled": false,
+
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.hlsearch": true,
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<c-h>"],
+      "after": ["<c-w>", "<c-h>"]
+    },
+    {
+      "before": ["<c-j>"],
+      "after": ["<c-w>", "<c-j>"]
+    },
+    {
+      "before": ["<c-k>"],
+      "after": ["<c-w>", "<c-k>"]
+    },
+    {
+      "before": ["<c-l>"],
+      "after": ["<c-w>", "<c-l>"]
+    },
+  ],
+}
