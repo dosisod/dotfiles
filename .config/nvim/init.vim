@@ -10,6 +10,7 @@ Plug 'morhetz/gruvbox'
 Plug 'dosisod/vim-skull'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'numToStr/Comment.nvim'
 
 call plug#end()
 
@@ -60,6 +61,8 @@ require'nvim-treesitter.configs'.setup {
     enable = true
   }
 }
+
+require('Comment').setup()
 EOF
 
 "setup splits
