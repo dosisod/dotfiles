@@ -11,6 +11,7 @@ Plug 'dosisod/vim-skull'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'numToStr/Comment.nvim'
+Plug 'norcalli/nvim-colorizer.lua'
 
 call plug#end()
 
@@ -63,6 +64,10 @@ require'nvim-treesitter.configs'.setup {
 }
 
 require('Comment').setup()
+
+require'colorizer'.setup()
+
+local ft = require('Comment.ft')
 EOF
 
 "setup splits

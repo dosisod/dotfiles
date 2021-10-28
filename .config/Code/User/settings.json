@@ -1,4 +1,5 @@
 {
+  "editor.lightbulb.enabled": false,
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
   "code-runner.enableAppInsights": false,
@@ -44,4 +45,5 @@
       "after": ["<c-w>", "<c-l>"]
     },
   ],
+  "telemetry.telemetryLevel": "off",
 }
