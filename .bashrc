@@ -104,10 +104,10 @@ alias dk="doas docker-compose"
 alias m="pwd > /tmp/__pwd"
 alias src="source ~/.bashrc"
 alias :q="exit"
-alias cls="clear && ls"
 alias sl="ls"
-alias cdd="cd .."
 alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
 alias sedri="find . -type f -print0 | xargs -0 sed -i"
 alias sedr="find . -type f -print0 | xargs -0 sed"
 function mk() { mkdir $@ && cd $@; }
@@ -121,13 +121,12 @@ function _grep_wrapper() {
 
 function grepr() { _grep_wrapper -r $@ .; }
 function greprf() { _grep_wrapper -rF $@ .; }
-function lst() { tree -fi $@ | grep -v "pycache\|node_modules"; }
+function lst() { tree -afi $@ | grep -v "\.venv\|\.git\|pycache\|node_modules"; }
 
-alias lsl="ls -Alh"
 alias psx="ps aux | grep"
-
-alias stretch="(sleep 3600; notify-send -u critical -i x 'Hey!' 'Time to stretch!') &"
 
 [ -f ~/.config/git/completion.bash ] && source ~/.config/git/completion.bash
 
 [ -f ~/.config/.fzf/fzf.bash ] && source ~/.config/.fzf/fzf.bash
+
+[ -f ~/.config/npm/completion.bash ] && source ~/.config/npm/completion.bash

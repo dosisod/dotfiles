@@ -19,3 +19,5 @@ cp {,~/}.xinitrc
 cat ./vscode-extentions | xargs -L 1 code --install-extension
 
 npm config set cache ~/.cache/npm
+
+mkdir -f ~/.config/npm && npm completion > ~/.config/npm/completion.bash
