@@ -145,6 +145,8 @@ inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>
 
 map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 
+map <silent> <leader>n :noh<CR>
+
 "makes quiting easier
 command! WQ wq
 command! Wq wq

@@ -10,10 +10,9 @@ export GTK_THEME=Adwaita:dark
 xset r rate $key_timeout_ms $key_repeat_delay_ms
 xcompmgr &
 xbanish -i shift -i control -i mod1 -i mod4 &
+dwmblocks &
 
 feh --no-fehbg --bg-fill --randomize ~/Pictures/wallpapers
-
-$(/home/noot/git/dwm/scripts/bar.sh) &
 
 old_sha=$(sha1sum $(which dwm))
 new_sha=""

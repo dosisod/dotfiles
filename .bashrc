@@ -114,6 +114,7 @@ function mk() { mkdir $@ && cd $@; }
 alias k9="kill -9"
 alias g="_grep_wrapper"
 alias gdb="gdb -ex='set history save on' -ex='set history filename /tmp/gdb_history'"
+alias cd=z
 
 function _grep_wrapper() {
 	grep $@ -IE --color=auto --exclude-dir={\*.venv\*,cosmopolitan,\*node_modules\*,\*\.git\*,\*.\*py\*};
@@ -130,3 +131,5 @@ alias psx="ps aux | grep"
 [ -f ~/.config/.fzf/fzf.bash ] && source ~/.config/.fzf/fzf.bash
 
 [ -f ~/.config/npm/completion.bash ] && source ~/.config/npm/completion.bash
+
+eval "$(zoxide init bash)"
