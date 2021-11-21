@@ -7,7 +7,8 @@ mkdir -p \
 	~/.config/nvim \
 	~/.config/git \
 	~/.config/gtk-3.0 \
-	~/.config/Code/User
+	~/.config/Code/User \
+	~/.config/.gimp-2.8
 
 cp {,~/}.config/nvim/init.vim
 cp {,~/}.config/git/ignore

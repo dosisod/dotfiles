@@ -9,9 +9,9 @@ esac
 # append to the history file, don't overwrite it
 shopt -s histappend
 
-HISTCONTROL=ignoreboth
-HISTSIZE=100
-HISTFILESIZE=100
+HISTCONTROL=ignorespace
+HISTSIZE=-1
+HISTFILESIZE=-1
 
 # update screen szie
 shopt -s checkwinsize

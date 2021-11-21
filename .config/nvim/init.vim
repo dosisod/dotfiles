@@ -143,7 +143,7 @@ inoremap <expr> <CR> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "\<Tab>"
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
-map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
+map <silent> <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 
 map <silent> <leader>n :noh<CR>
 
