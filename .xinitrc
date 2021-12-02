@@ -8,7 +8,7 @@ screensaver_idle_seconds=300
 export GTK_THEME=Adwaita:dark
 export GIMP2_DIRECTORY=.config/.gimp-2.8
 
-xset r rate $key_timeout_ms $key_repeat_delay_ms
+xset r rate $key_timeout_ms $key_repeat_delay_ms &
 xcompmgr &
 xbanish -i shift -i control -i mod1 -i mod4 &
 dwmblocks &
@@ -18,7 +18,7 @@ dwmblocks &
 old_sha=$(sha1sum $(which dwm))
 new_sha=""
 
-xset s $screensaver_idle_seconds
+xset s $screensaver_idle_seconds &
 /home/noot/git/xssstate/xsidle.sh slock &
 
 while true; do

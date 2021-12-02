@@ -58,7 +58,7 @@ au FileType typescript,html,javascript,css,scss,json,yaml,skull setlocal ts=2 sw
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c" },
+  ensure_installed = { "c", "javascript", "typescript", "python", "html" },
   highlight = {
     enable = true
   }
