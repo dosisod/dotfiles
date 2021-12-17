@@ -1,8 +1,5 @@
 {
-  "[javascript]": {
-    "editor.tabSize": 2
-  },
-  "[typescript]": {
+  "[javascript][typescript]": {
     "editor.tabSize": 2
   },
 

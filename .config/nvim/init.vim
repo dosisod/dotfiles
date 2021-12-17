@@ -12,6 +12,11 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'numToStr/Comment.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
+Plug 'gennaro-tedesco/nvim-peekup'
+Plug 'jbyuki/venn.nvim', {'branch': 'main'}
+Plug 'sunjon/shade.nvim'
+Plug 'winston0410/cmd-parser.nvim'
+Plug 'winston0410/range-highlight.nvim'
 
 call plug#end()
 
@@ -69,6 +74,19 @@ require('Comment').setup()
 require'colorizer'.setup()
 
 local ft = require('Comment.ft')
+
+require'shade'.setup({
+  overlay_opacity = 50,
+  opacity_step = 1,
+  keys = {
+    brightness_up    = '<C-Up>',
+    brightness_down  = '<C-Down>',
+    toggle           = '<Leader>s',
+  }
+})
+
+require'range-highlight'.setup{}
+
 EOF
 
 "setup splits
