@@ -53,7 +53,7 @@ export NODE_REPL_HISTORY=/dev/null
 #allows for control+s in vim
 stty -ixon
 
-cd $(cat /tmp/__pwd 2> /dev/null)
+cd "$(cat /tmp/__pwd 2> /dev/null)"
 
 __git_branch() {
 	branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
@@ -131,5 +131,7 @@ alias psx="ps aux | grep"
 [ -f ~/.config/.fzf/fzf.bash ] && source ~/.config/.fzf/fzf.bash
 
 [ -f ~/.config/npm/completion.bash ] && source ~/.config/npm/completion.bash
+
+[ -f /usr/share/bash-completion/completions/git ] && source /usr/share/bash-completion/completions/git
 
 eval "$(zoxide init bash)"
