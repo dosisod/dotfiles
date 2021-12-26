@@ -53,7 +53,7 @@ export NODE_REPL_HISTORY=/dev/null
 #allows for control+s in vim
 stty -ixon
 
-cd "$(cat /tmp/__pwd 2> /dev/null)"
+\cd "$(cat /tmp/__pwd 2> /dev/null)"
 
 __git_branch() {
 	branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)

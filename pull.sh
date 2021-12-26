@@ -7,4 +7,4 @@ cp {~/,}.config/Code/User/settings.json
 cp {~/,}.bashrc
 cp {~/,}.xinitrc
 
-code --list-extensions > vscode-extentions
+command -v code && code --list-extensions > vscode-extentions || true

@@ -1,5 +1,8 @@
 #!/bin/sh
 
+MUSIC_DIR=/home/loot/Music
+SCRIPT_DIR=/home/loot/git/dwm/scripts
+
 key_timeout_ms=300
 key_repeat_delay_ms=25
 
@@ -13,19 +16,19 @@ xcompmgr &
 xbanish -i shift -i control -i mod1 -i mod4 &
 dwmblocks &
 
-/home/noot/git/dwm/scripts/background.sh
+/home/loot/git/dwm/scripts/background.sh
 
 old_sha=$(sha1sum $(which dwm))
 new_sha=""
 
 xset s $screensaver_idle_seconds &
-/home/noot/git/xssstate/xsidle.sh slock &
+/home/loot/git/xssstate/xsidle.sh slock &
 
 while true; do
 	if [ "$old_sha" != "$new_sha" ]
 	then
 		new_sha=$old_sha
-		dwm
+		MUSIC_DIR=$MUSIC_DIR SCRIPT_DIR=$SCRIPT_DIR dwm
 	else
 		exit 0
 	fi
