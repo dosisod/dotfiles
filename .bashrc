@@ -35,6 +35,8 @@ bind -m vi-insert 'Control-l: clear-screen'
 export EDITOR=nvim
 export VISUAL=nvim
 
+export PATH=$PATH:~/.local/bin
+
 export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=1;34:ln=32:bn=32:se=0"
 
 #enable flask hotreloading, disable dotnet telemetry
@@ -128,7 +130,8 @@ alias psx="ps aux | grep"
 
 [ -f ~/.config/git/completion.bash ] && source ~/.config/git/completion.bash
 
-[ -f ~/.config/.fzf/fzf.bash ] && source ~/.config/.fzf/fzf.bash
+[ -f ~/.config/.fzf/shell/completion.bash ] && source ~/.config/.fzf/shell/completion.bash
+[ -f ~/.config/.fzf/shell/key-bindings.bash ] && source ~/.config/.fzf/shell/key-bindings.bash
 
 [ -f ~/.config/npm/completion.bash ] && source ~/.config/npm/completion.bash
 
