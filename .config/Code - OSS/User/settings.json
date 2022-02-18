@@ -1,0 +1,128 @@
+{
+  "[javascript][typescript]": {
+    "editor.tabSize": 2
+  },
+
+  "breadcrumbs.enabled": false,
+
+  "code-runner.enableAppInsights": false,
+
+  "editor.codeLens": false,
+  "editor.cursorBlinking": "solid",
+  "editor.cursorStyle": "block",
+  "editor.cursorSurroundingLines": 2,
+  "editor.fontFamily": "'JetBrains Mono', monospace",
+  "editor.insertSpaces": true,
+  "editor.lightbulb.enabled": false,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.stickyTabStops": true,
+  "editor.tabSize": 4,
+  "editor.useTabStops": true,
+
+  "explorer.confirmDelete": false,
+
+  "extensions.autoUpdate": false,
+  "extensions.ignoreRecommendations": true,
+
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true,
+    "**/.git": true,
+    "**/.venv": true,
+    "**/node_modules": true
+  },
+
+  "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m",
+
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "telemetry.telemetryLevel": "off",
+
+  "terminal.integrated.cursorBlinking": true,
+
+  "update.mode": "none",
+
+  "vim.incsearch": true,
+  "vim.hlsearch": true,
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<c-h>"],
+      "after": ["<c-w>", "<c-h>"]
+    },
+    {
+      "before": ["<c-j>"],
+      "after": ["<c-w>", "<c-j>"]
+    },
+    {
+      "before": ["<c-k>"],
+      "after": ["<c-w>", "<c-k>"]
+    },
+    {
+      "before": ["<c-l>"],
+      "after": ["<c-w>", "<c-l>"]
+    },
+    {
+      "before": ["<space>"],
+      "commands": [
+        {
+          "command": "workbench.action.quickOpen"
+        }
+      ]
+    },
+    {
+      "before": ["<C-w>", "q"],
+      "commands": [
+        {
+          "command": "workbench.action.closeEditorsAndGroup"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "j"],
+      "commands": [
+        {
+          "command": "workbench.action.editor.nextChange"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "k"],
+      "commands": [
+        {
+          "command": "workbench.action.editor.previousChange"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "b"],
+      "commands": [
+        {
+          "command": "editor.debug.action.toggleBreakpoint"
+        }
+      ]
+    }
+  ],
+  "vim.useSystemClipboard": true,
+
+  "window.menuBarVisibility": "hidden",
+  "window.zoomLevel": -1,
+
+  "workbench.colorCustomizations": {
+    "editorCursor.foreground": "#ffffff",
+    "terminalCursor.foreground": "#ffffff",
+    "editor.lineHighlightBackground": "#ffffff11",
+    "editor.selectionBackground": "#ffffff33",
+    "editor.selectionHighlightBackground": "#00000000"
+  },
+  "workbench.colorTheme": "Gruvbox Dark (Hard)",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.editor.labelFormat": "short",
+  "workbench.editor.showTabs": false,
+"workbench.startupEditor": "none",
+"python.languageServer": "Pylance",
+}

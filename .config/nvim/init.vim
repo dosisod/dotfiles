@@ -12,11 +12,6 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'numToStr/Comment.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
-Plug 'gennaro-tedesco/nvim-peekup'
-Plug 'jbyuki/venn.nvim', {'branch': 'main'}
-Plug 'sunjon/shade.nvim'
-Plug 'winston0410/cmd-parser.nvim'
-Plug 'winston0410/range-highlight.nvim'
 
 call plug#end()
 
@@ -49,6 +44,22 @@ let g:fzf_preview_window = ''
 imap <C-x><C-l> <plug>(fzf-complete-line)
 imap <C-x><C-p> <plug>(fzf-complete-path)
 
+" coc setup
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
 au BufNewFile,BufRead *.pyi set syntax=python
 au BufNewFile,BufRead *.sk set syntax=skull
 au BufNewFile,BufRead *.c set syntax=c filetype=c
@@ -59,7 +70,7 @@ au BufNewFile,BufRead *.py set commentstring=#\ %s
 au TermOpen * setlocal nonumber norelativenumber
 
 au FileType python,java setlocal ts=4 sw=4 sts=4 expandtab
-au FileType typescript,html,javascript,css,scss,json,yaml,skull setlocal ts=2 sw=2 sts=2 expandtab
+au FileType vue,typescript,html,javascript,css,scss,json,yaml,skull setlocal ts=2 sw=2 sts=2 expandtab
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
@@ -74,18 +85,6 @@ require('Comment').setup()
 require'colorizer'.setup()
 
 local ft = require('Comment.ft')
-
-require'shade'.setup({
-  overlay_opacity = 50,
-  opacity_step = 1,
-  keys = {
-    brightness_up    = '<C-Up>',
-    brightness_down  = '<C-Down>',
-    toggle           = '<Leader>s',
-  }
-})
-
-require'range-highlight'.setup{}
 
 EOF
 
@@ -191,8 +190,6 @@ nnoremap <silent> <C-S-RIGHT> <C-W>>
 nnoremap <silent> <C-S-UP> <C-W>+
 nnoremap <silent> <C-S-DOWN> <C-W>-
 
-"hitting K instead of k is annoying
-map K k
 map Q q
 imap <F1> <nop>
 nmap <F1> <nop>

@@ -14,8 +14,13 @@ cp {,~/}.config/nvim/init.vim
 cp {,~/}.config/git/ignore
 cp {,~/}.config/gtk-3.0/settings.ini
 cp {,~/}.config/Code/User/settings.json
+cp {,~/}.config/flameshot/flameshot.ini
 cp {,~/}.bashrc
 cp {,~/}.xinitrc
+
+VSCODE_CONFIG=".config/Code - OSS/User/settings.json"
+cp -f "./$VSCODE_CONFIG" ~/"$VSCODE_CONFIG"
+cp -f "$VSCODE_CONFIG" ~/.config/Code/User/settings.json
 
 cat ./vscode-extentions | xargs -L 1 code --install-extension
 

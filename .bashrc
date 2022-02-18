@@ -99,8 +99,8 @@ alias grm="git rm"
 alias goof="git reset --soft HEAD~1"
 alias gtfo="git checkout master -f"
 
-alias d="doas docker"
-alias dk="doas docker-compose"
+alias d="sudo docker"
+alias dk="sudo docker-compose"
 
 #system related aliases
 alias m="pwd > /tmp/__pwd"
