@@ -102,7 +102,6 @@ alias gtfo="git checkout master -f"
 alias d="sudo docker"
 alias dk="sudo docker-compose"
 
-#system related aliases
 alias m="pwd > /tmp/__pwd"
 alias src="source ~/.bashrc"
 alias :q="exit"
@@ -117,6 +116,7 @@ alias k9="kill -9"
 alias g="_grep_wrapper"
 alias gdb="gdb -ex='set history save on' -ex='set history filename /tmp/gdb_history'"
 alias cd=z
+alias http="python3 -m http.server"
 
 function _grep_wrapper() {
 	grep $@ -IE --color=auto --exclude-dir={\*.venv\*,cosmopolitan,\*node_modules\*,\*\.git\*,\*.\*py\*};
