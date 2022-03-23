@@ -25,6 +25,8 @@ new_sha=""
 xset s $screensaver_idle_seconds &
 $HOME/git/xssstate/xsidle.sh slock &
 
+dbus-update-activation-environment --systemd DISPLAY
+
 while true; do
 	if [ "$old_sha" != "$new_sha" ]
 	then

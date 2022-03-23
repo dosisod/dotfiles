@@ -44,7 +44,7 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export FLASK_DEBUG=1
 
 #path for gnome keyring
-export SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 
 #disable certain files
 export PYTHONSTARTUP=$HOME/.config/pythonrc.py
