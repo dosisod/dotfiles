@@ -9,7 +9,8 @@ mkdir -p \
 	~/.config/gtk-3.0 \
 	~/.config/Code/User \
 	~/.config/.gimp-2.8 \
-	~/.config/ptpython
+	~/.config/ptpython \
+	~/.gnupg
 
 cp {,~/}.config/nvim/init.vim
 cp {,~/}.config/git/ignore
@@ -18,6 +19,7 @@ cp {,~/}.config/Code/User/settings.json
 cp {,~/}.config/ptpython/config.py
 cp {,~/}.bashrc
 cp {,~/}.xinitrc
+cp {,~/}.gnupg/gpg-agent.conf
 
 VSCODE_CONFIG=".config/Code - OSS/User/settings.json"
 cp -f "./$VSCODE_CONFIG" ~/"$VSCODE_CONFIG"
