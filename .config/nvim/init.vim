@@ -65,6 +65,7 @@ au BufNewFile,BufRead *.sk set syntax=skull
 au BufNewFile,BufRead *.c set syntax=c filetype=c
 au BufNewFile,BufRead *.h set syntax=c filetype=c
 au BufNewFile,BufRead *.ll set syntax=llvm filetype=llvm
+au BufNewFile,BufRead Dockerfile.* set syntax=dockerfile filetype=dockerfile
 au BufNewFile,BufRead *.py set commentstring=#\ %s
 
 au TermOpen * setlocal nonumber norelativenumber

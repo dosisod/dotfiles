@@ -43,9 +43,6 @@ export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=1;34:ln=32:bn=32:se=0"
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export FLASK_DEBUG=1
 
-#path for gnome keyring
-export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-
 #disable certain files
 export PYTHONSTARTUP=$HOME/.config/pythonrc.py
 export LESSHISTFILE=/dev/null

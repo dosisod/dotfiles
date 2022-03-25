@@ -25,6 +25,9 @@ new_sha=""
 xset s $screensaver_idle_seconds &
 $HOME/git/xssstate/xsidle.sh slock &
 
+eval $(gnome-keyring-daemon --start)
+export SSH_AUTH_SOCK
+
 dbus-update-activation-environment --systemd DISPLAY
 
 while true; do
