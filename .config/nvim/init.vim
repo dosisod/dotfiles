@@ -75,7 +75,7 @@ au FileType vue,typescript,html,javascript,css,scss,json,yaml,skull setlocal ts=
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c", "javascript", "typescript", "python", "html" },
+  ensure_installed = { "c", "cpp", "javascript", "typescript", "python", "html" },
   highlight = {
     enable = true
   }
