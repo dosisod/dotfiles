@@ -95,6 +95,7 @@ alias gl="git log --name-only"
 alias grm="git rm"
 alias goof="git reset --soft HEAD~1"
 alias gtfo="git checkout master -f"
+alias gnow="git commit --amend --no-edit --date=now -n"
 
 alias d="sudo docker"
 alias dk="sudo docker-compose"
