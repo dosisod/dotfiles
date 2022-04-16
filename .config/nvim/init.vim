@@ -33,6 +33,8 @@ hi GruvBoxAquaSign guifg=#8ec07c guibg=bg
 hi GruvBoxGreenSign guifg=#b8bb26 guibg=bg
 hi SignColumn guibg=bg
 hi CursorLineNr guibg=bg
+hi Operator ctermfg=223 guifg=#ebdbb2
+
 nmap <leader>j :GitGutterNextHunk<CR>
 nmap <leader>k :GitGutterPrevHunk<CR>
 
@@ -163,7 +165,7 @@ inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>
 
 map <silent> <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 
-map <silent> <leader>n :noh<CR>
+map <silent> <leader>n :let @/ = ""<CR>
 
 "makes quiting easier
 command! WQ wq
