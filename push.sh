@@ -21,13 +21,19 @@ cp {,~/}.bashrc
 cp {,~/}.xinitrc
 cp {,~/}.gnupg/gpg-agent.conf
 
-VSCODE_CONFIG=".config/Code - OSS/User/settings.json"
-cp -f "./$VSCODE_CONFIG" ~/"$VSCODE_CONFIG"
-cp -f "$VSCODE_CONFIG" ~/.config/Code/User/settings.json
-cat ./vscode-extentions | xargs -L 1 code --install-extension
+[ -z "$(command -v code)" ] || {
+	VSCODE_CONFIG=".config/Code - OSS/User/settings.json"
+	cp -f "./$VSCODE_CONFIG" ~/"$VSCODE_CONFIG"
+	cp -f "$VSCODE_CONFIG" ~/.config/Code/User/settings.json
+	cat ./vscode-extentions | xargs -L 1 code --install-extension
+}
 
-npm config set cache ~/.cache/npm
-mkdir -p ~/.config/npm && npm completion > ~/.config/npm/completion.bash
+[ -z "$(command -v npm)" ] || {
+	npm config set cache ~/.cache/npm
+	mkdir -p ~/.config/npm && npm completion > ~/.config/npm/completion.bash
+}
 
-flameshot_config=.config/flameshot/flameshot.ini
-sed "s|HOME|$HOME|" $flameshot_config > ~/$flameshot_config
+[ -z "$(command -v flameshot)" ] || {
+	flameshot_config=.config/flameshot/flameshot.ini
+	sed "s|HOME|$HOME|" $flameshot_config > ~/$flameshot_config
+}
