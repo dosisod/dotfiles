@@ -9,6 +9,7 @@ Plug 'tpope/vim-surround'
 Plug 'morhetz/gruvbox'
 Plug 'dosisod/vim-skull'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'numToStr/Comment.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
@@ -63,7 +64,7 @@ function! s:show_documentation()
 endfunction
 
 au BufNewFile,BufRead *.pyi set syntax=python
-au BufNewFile,BufRead *.sk set syntax=skull
+au BufNewFile,BufRead *.sk set syntax=skull filetype=skull
 au BufNewFile,BufRead *.c set syntax=c filetype=c
 au BufNewFile,BufRead *.h set syntax=c filetype=c
 au BufNewFile,BufRead *.ll set syntax=llvm filetype=llvm
@@ -77,10 +78,21 @@ au FileType markdown,vue,typescript,html,javascript,css,scss,json,yaml,skull set
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c", "cpp", "javascript", "typescript", "python", "html" },
+  ensure_installed = { "c", "cpp", "javascript", "typescript", "python", "html", "skull", "query" },
   highlight = {
     enable = true
   }
+}
+
+local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+parser_config.skull = {
+  install_info = {
+    url = "~/git/tree-sitter-skull",
+    files = {"src/parser.c"},
+    generate_requires_npm = false,
+    requires_generate_from_grammar = false,
+  },
+  filetype = "sk",
 }
 
 require('Comment').setup()
