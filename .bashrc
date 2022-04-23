@@ -128,6 +128,9 @@ function lst() { tree -afi $@ | grep -v "\.venv\|\.git\|pycache\|node_modules"; 
 
 alias psx="ps aux | grep"
 
-[ -f /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
+[ -f ~/.config/.fzf/shell/completion.bash ] && source ~/.config/.fzf/shell/completion.bash
+[ -f ~/.config/.fzf/shell/key-bindings.bash ] && source ~/.config/.fzf/shell/key-bindings.bash
+
+[ -f /usr/share/bash-completion/completions/git ] && source /usr/share/bash-completion/completions/git
 
 eval "$(zoxide init bash)"
