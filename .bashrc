@@ -36,7 +36,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 export VIMRUNTIME=~/git/neovim/runtime
 
-export PATH=$PATH:~/.local/bin:./node_modules/bin
+export PATH=$PATH:~/.local/bin:./node_modules/bin:~/.cargo/bin
 
 export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=1;34:ln=32:bn=32:se=0"
 

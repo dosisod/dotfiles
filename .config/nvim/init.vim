@@ -13,6 +13,7 @@ Plug 'nvim-treesitter/playground'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'numToStr/Comment.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
+Plug '~/git/tree-sitter-skull'
 
 call plug#end()
 
@@ -73,12 +74,12 @@ au BufNewFile,BufRead *.py set commentstring=#\ %s
 
 au TermOpen * setlocal nonumber norelativenumber
 
-au FileType python,java setlocal ts=4 sw=4 sts=4 expandtab
+au FileType python,java,rust setlocal ts=4 sw=4 sts=4 expandtab
 au FileType markdown,vue,typescript,html,javascript,css,scss,json,yaml,skull setlocal ts=2 sw=2 sts=2 expandtab
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c", "cpp", "javascript", "typescript", "python", "html", "skull", "query" },
+  ensure_installed = { "c", "cpp", "javascript", "typescript", "python", "html", "skull", "query", "rust" },
   highlight = {
     enable = true
   }
