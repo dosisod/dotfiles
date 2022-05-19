@@ -9,9 +9,23 @@ esac
 # append to the history file, don't overwrite it
 shopt -s histappend
 
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_STATE_HOME=$HOME/.local/state
+export XDG_CACHE_HOME=$HOME/.cache
+
+export CARGO_HOME="$XDG_CACHE_HOME"/cargo
+export RUSTUP_HOME="$XDG_CACHE_HOME"/rustup
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+export GOPATH="$XDG_DATA_HOME"/go
+export DVDCSS_CACHE="$XDG_DATA_HOME"/dvdcss
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
+
 HISTCONTROL=ignorespace
 HISTSIZE=-1
 HISTFILESIZE=-1
+HISTFILE=$XDG_CACHE_HOME/bash/history
 
 # update screen szie
 shopt -s checkwinsize
@@ -45,7 +59,7 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export FLASK_DEBUG=1
 
 #disable certain files
-export PYTHONSTARTUP=$HOME/.config/pythonrc.py
+export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc"
 export LESSHISTFILE=/dev/null
 export LESS="-FRIX~"
 export NODE_REPL_HISTORY=/dev/null
@@ -134,3 +148,5 @@ alias psx="ps aux | grep"
 [ -f /usr/share/bash-completion/completions/git ] && source /usr/share/bash-completion/completions/git
 
 eval "$(zoxide init bash)"
+
+. "$CARGO_HOME/env"

@@ -8,7 +8,7 @@ cp {~/,}.config/Code/User/settings.json
 cp {~/,}.config/ptpython/config.py
 cp {~/,}.bashrc
 cp {~/,}.xinitrc
-cp {~/,}.gnupg/gpg-agent.conf
+cp {~/,}.local/share/gnupg/gpg-agent.conf
 
 command -v code > /dev/null && code --list-extensions > vscode-extentions || true
 

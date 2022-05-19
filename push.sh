@@ -10,7 +10,7 @@ mkdir -p \
 	~/.config/Code/User \
 	~/.config/.gimp-2.8 \
 	~/.config/ptpython \
-	~/.gnupg
+	~/.local/share/gnupg
 
 cp {,~/}.config/nvim/init.vim
 cp {,~/}.config/git/ignore
@@ -19,7 +19,7 @@ cp {,~/}.config/Code/User/settings.json
 cp {,~/}.config/ptpython/config.py
 cp {,~/}.bashrc
 cp {,~/}.xinitrc
-cp {,~/}.gnupg/gpg-agent.conf
+cp {,~/}.local/share/gnupg/gpg-agent.conf
 
 [ -z "$(command -v code)" ] || {
 	VSCODE_CONFIG=".config/Code - OSS/User/settings.json"
@@ -29,7 +29,6 @@ cp {,~/}.gnupg/gpg-agent.conf
 }
 
 [ -z "$(command -v npm)" ] || {
-	npm config set cache ~/.cache/npm
 	mkdir -p ~/.config/npm && npm completion > ~/.config/npm/completion.bash
 }
 
