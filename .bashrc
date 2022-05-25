@@ -21,6 +21,7 @@ export GOPATH="$XDG_DATA_HOME"/go
 export DVDCSS_CACHE="$XDG_DATA_HOME"/dvdcss
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
+export ASPELL_CONF="per-conf $XDG_CONFIG_HOME/aspell/aspell.conf; personal $XDG_CONFIG_HOME/aspell/en.pws; repl $XDG_CONFIG_HOME/aspell/en.prepl"
 
 HISTCONTROL=ignorespace
 HISTSIZE=-1

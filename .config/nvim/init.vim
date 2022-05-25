@@ -2,7 +2,7 @@
 call plug#begin('~/.cache/nvim/')
 
 Plug 'airblade/vim-gitgutter'
-Plug 'junegunn/fzf', { 'dir': '~/.config/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.config/.fzf' }
 Plug 'junegunn/fzf.vim'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'tpope/vim-surround'
@@ -14,6 +14,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'numToStr/Comment.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug '~/git/tree-sitter-skull'
+Plug 'tpope/vim-repeat'
 
 call plug#end()
 
