@@ -10,6 +10,7 @@ mkdir -p \
 	~/.config/Code/User \
 	~/.config/.gimp-2.8 \
 	~/.config/ptpython \
+	~/.config/python \
 	~/.local/share/gnupg
 
 cp {,~/}.config/nvim/init.vim
@@ -17,6 +18,7 @@ cp {,~/}.config/git/ignore
 cp {,~/}.config/gtk-3.0/settings.ini
 cp {,~/}.config/Code/User/settings.json
 cp {,~/}.config/ptpython/config.py
+cp {,~/}.config/python/pythonrc
 cp {,~/}.bashrc
 cp {,~/}.xinitrc
 cp {,~/}.local/share/gnupg/gpg-agent.conf

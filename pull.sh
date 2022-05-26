@@ -5,6 +5,7 @@ cp {~/,}.config/git/ignore
 cp {~/,}.config/gtk-3.0/settings.ini
 cp {~/,}.config/Code\ -\ OSS/User/settings.json
 cp {~/,}.config/Code/User/settings.json
+cp {~/,}.config/python/pythonrc
 cp {~/,}.config/ptpython/config.py
 cp {~/,}.bashrc
 cp {~/,}.xinitrc
