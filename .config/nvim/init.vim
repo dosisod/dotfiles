@@ -80,7 +80,7 @@ au FileType markdown,vue,typescript,html,javascript,css,scss,json,yaml,skull set
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c", "cpp", "javascript", "typescript", "python", "html", "skull", "query", "rust" },
+  ensure_installed = { "c", "cpp", "javascript", "typescript", "python", "html", "skull", "query", "rust", "go" },
   highlight = {
     enable = true
   }
@@ -196,11 +196,6 @@ tnoremap <C-J> <C-W>j
 tnoremap <C-K> <C-W>k
 tnoremap <C-L> <C-W>l
 tnoremap <C-H> <C-W>h
-
-tnoremap <C-H> <C-\><C-N><C-W>h
-tnoremap <C-J> <C-\><C-N><C-W>j
-tnoremap <C-K> <C-\><C-N><C-W>k
-tnoremap <C-L> <C-\><C-N><C-W>l
 
 nnoremap <silent> <C-S-LEFT> <C-W><
 nnoremap <silent> <C-S-RIGHT> <C-W>>
