@@ -1,3 +1,11 @@
+let g:coc_global_extensions = [
+\ 'coc-tsserver',
+\ 'coc-rust-analyzer',
+\ 'coc-pyright',
+\ 'coc-json',
+\ 'coc-yaml',
+\ ]
+
 "to install vim-plug, follow instructions at https://github.com/junegunn/vim-plug/wiki/tutorial
 call plug#begin('~/.cache/nvim/')
 
@@ -15,6 +23,7 @@ Plug 'numToStr/Comment.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug '~/git/tree-sitter-skull'
 Plug 'tpope/vim-repeat'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 
@@ -104,6 +113,10 @@ require'colorizer'.setup()
 local ft = require('Comment.ft')
 
 EOF
+
+" go LSP setup
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 
 "setup splits
 set splitbelow
