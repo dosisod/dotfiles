@@ -4,6 +4,7 @@ let g:coc_global_extensions = [
 \ 'coc-pyright',
 \ 'coc-json',
 \ 'coc-yaml',
+\ 'coc-docker',
 \ ]
 
 "to install vim-plug, follow instructions at https://github.com/junegunn/vim-plug/wiki/tutorial
