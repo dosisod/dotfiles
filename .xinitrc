@@ -1,7 +1,6 @@
 #!/bin/sh
 
 MUSIC_DIR=$HOME/Music
-SCRIPT_DIR=$HOME/git/dwm/scripts
 
 key_timeout_ms=300
 key_repeat_delay_ms=25
@@ -18,7 +17,7 @@ xbanish -i shift -i control -i mod1 -i mod4 &
 dwmblocks &
 flameshot &
 
-$HOME/git/dwm/scripts/background.sh
+background.sh
 
 old_sha=$(sha1sum $(which dwm))
 new_sha=""
@@ -35,7 +34,7 @@ while true; do
 	if [ "$old_sha" != "$new_sha" ]
 	then
 		new_sha=$old_sha
-		MUSIC_DIR=$MUSIC_DIR SCRIPT_DIR=$SCRIPT_DIR dwm
+		MUSIC_DIR="$MUSIC_DIR" dwm
 	else
 		exit 0
 	fi

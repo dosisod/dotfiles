@@ -23,6 +23,7 @@ cp {,~/}.config/python/pythonrc
 cp {,~/}.bashrc
 cp {,~/}.xinitrc
 cp {,~/}.local/share/gnupg/gpg-agent.conf
+cp .local/bin/*.sh ~/.local/bin
 
 [ -z "$(command -v code)" ] || {
 	VSCODE_CONFIG=".config/Code - OSS/User/settings.json"

@@ -11,6 +11,7 @@ cp {~/,}.config/ptpython/config.py
 cp {~/,}.bashrc
 cp {~/,}.xinitrc
 cp {~/,}.local/share/gnupg/gpg-agent.conf
+cp ~/.local/bin/*.sh .local/bin
 
 command -v code > /dev/null && code --list-extensions > vscode-extentions || true
 
