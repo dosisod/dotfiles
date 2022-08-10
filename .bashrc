@@ -97,6 +97,7 @@ alias todo="$EDITOR -i NONE ~/todo"
 alias v="$EDITOR -i NONE"
 alias vi="$EDITOR -i NONE"
 alias vim="$EDITOR -i NONE"
+alias t="cd ~/git/todo && $EDITOR x && cd -"
 
 #git related aliases
 alias gpom="git push origin master"

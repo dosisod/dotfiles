@@ -86,7 +86,7 @@ au BufNewFile,BufRead *.py set commentstring=#\ %s
 au TermOpen * setlocal nonumber norelativenumber
 
 au FileType python,java,rust setlocal ts=4 sw=4 sts=4 expandtab
-au FileType markdown,vue,typescript,html,javascript,css,scss,json,yaml,skull setlocal ts=2 sw=2 sts=2 expandtab
+au FileType markdown,vue,typescript,html,javascript,css,scss,json,yaml,skull,toml setlocal ts=2 sw=2 sts=2 expandtab
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
