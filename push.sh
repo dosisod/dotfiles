@@ -14,7 +14,7 @@ mkdir -p \
 	~/.local/share/gnupg
 
 cp {,~/}.config/nvim/coc-settings.json
-cp {,~/}.config/nvim/init.vim
+cp {,~/}.config/nvim/init.lua
 cp {,~/}.config/git/ignore
 cp {,~/}.config/gtk-3.0/settings.ini
 cp {,~/}.config/Code/User/settings.json

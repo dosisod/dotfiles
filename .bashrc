@@ -91,7 +91,7 @@ alias vv="source .venv/bin/activate"
 alias mvv="python3 -m venv .venv && source .venv/bin/activate"
 
 #makes accessing files easier
-alias nvimrc="$EDITOR -i NONE ~/.config/nvim/init.vim"
+alias nvimrc="$EDITOR -i NONE ~/.config/nvim/init.lua"
 alias bashrc="$EDITOR -i NONE ~/.bashrc"
 alias todo="$EDITOR -i NONE ~/todo"
 alias v="$EDITOR -i NONE"
