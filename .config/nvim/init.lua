@@ -152,7 +152,7 @@ opt.sidescrolloff = 2
 opt.lazyredraw = true
 opt.ignorecase = true
 opt.smartcase = true
-opt.dir = '~/.cache/swp/'
+cmd("set dir=~/.cache/swp")
 opt.undofile = true
 opt.undodir = '/tmp'
 opt.mousemodel = 'extend'
@@ -192,8 +192,8 @@ map('', '<M-DOWN>', ':bn<CR>', {silent = true})
 map('!', '<M-DOWN>', '<ESC>:bn<CR>a', {silent = true})
 
 -- open nvimrc/bashrc from inside vim
-create_user_command('V', 'sp ~/.config/nvim/init.vim', {})
-create_user_command('B', 'sp ~/.bashrc', {})
+create_user_command('V', 'e ~/.config/nvim/init.lua', {})
+create_user_command('B', 'e ~/.bashrc', {})
 
 -- auto block creation
 map('i', '{<CR>', '{<CR><TAB><END><CR><BS>}<ESC>kI', {noremap = true})
@@ -207,9 +207,9 @@ opt.completeopt = 'longest,menuone'
 map('i', '<Tab>', [[coc#pum#visible() ? coc#pum#confirm() : "<Tab>"]], {expr = true, noremap = true})
 exec([[
 inoremap <silent><expr> <C-N>
-      \ coc#pum#visible() ? coc#pum#next(1):
-      \ CheckBackspace() ? "\<C-N>" :
-      \ coc#refresh()
+  \ coc#pum#visible() ? coc#pum#next(1):
+  \ CheckBackspace() ? "\<C-N>" :
+  \ coc#refresh()
 ]], true)
 
 map('', '<leader>q', ':bp<bar>sp<bar>bn<bar>bd<CR>', {silent = true})
@@ -240,7 +240,7 @@ map('i', '<F1>', '<nop>', {})
 map('n', '<F1>', '<nop>', {})
 
 -- makes sourcing vimrc easier
-create_user_command('S', 'source ~/.config/nvim/init.vim', {})
+create_user_command('S', 'source ~/.config/nvim/init.lua', {})
 
 create_user_command('S4', 'set tabstop=4 shiftwidth=4 softtabstop=4 expandtab', {})
 create_user_command('S2', 'set tabstop=2 shiftwidth=2 softtabstop=2 expandtab', {})
