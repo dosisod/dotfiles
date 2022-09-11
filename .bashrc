@@ -51,7 +51,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 export VIMRUNTIME=~/git/neovim/runtime
 
-export PATH=$PATH:~/.local/bin:./node_modules/bin:~/.cargo/bin:~/.local/share/go/bin/
+export PATH=$PATH:~/.local/bin:./node_modules/.bin:~/.cargo/bin:~/.local/share/go/bin/
 
 export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=1;34:ln=32:bn=32:se=0"
 
@@ -97,7 +97,7 @@ alias todo="$EDITOR -i NONE ~/todo"
 alias v="$EDITOR -i NONE"
 alias vi="$EDITOR -i NONE"
 alias vim="$EDITOR -i NONE"
-alias t="cd ~/git/todo && $EDITOR x && cd -"
+alias t="cd ~/git/todo && $EDITOR x"
 
 #git related aliases
 alias gpom="git push origin master"
