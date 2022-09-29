@@ -93,7 +93,6 @@ alias mvv="python3 -m venv .venv && source .venv/bin/activate"
 #makes accessing files easier
 alias nvimrc="$EDITOR -i NONE ~/.config/nvim/init.lua"
 alias bashrc="$EDITOR -i NONE ~/.bashrc"
-alias todo="$EDITOR -i NONE ~/todo"
 alias v="$EDITOR -i NONE"
 alias vi="$EDITOR -i NONE"
 alias vim="$EDITOR -i NONE"
@@ -114,6 +113,7 @@ alias goof="git reset --soft HEAD~1"
 alias gtfo="git checkout master -f"
 alias gnow='GIT_COMMITTER_DATE="$(date)" git commit --amend --no-edit --date=now -n'
 alias diff="diff --color=auto"
+alias gca="git commit --amend --no-edit"
 
 alias d="sudo docker"
 alias dk="sudo docker-compose"
