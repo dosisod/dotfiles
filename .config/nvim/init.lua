@@ -35,6 +35,7 @@ Plug('norcalli/nvim-colorizer.lua')
 Plug('~/git/tree-sitter-skull')
 Plug('tpope/vim-repeat')
 Plug('fatih/vim-go', {['do'] = ':GoUpdateBinaries'})
+Plug('nvim-treesitter/nvim-treesitter-context')
 
 vim.call('plug#end')
 
@@ -127,6 +128,16 @@ require('Comment').setup()
 require('colorizer').setup()
 
 require('Comment.ft')
+
+require('treesitter-context').setup {
+  patterns = {
+    default = {
+      'class',
+      'function',
+      'method',
+    },
+  },
+}
 
 -- go LSP setup
 g.go_def_mode = 'gopls'

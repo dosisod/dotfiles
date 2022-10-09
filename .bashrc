@@ -135,7 +135,7 @@ alias cd=z
 alias http="python3 -m http.server"
 
 function _grep_wrapper() {
-	grep $@ -IE --color=auto --exclude-dir={\*.venv\*,cosmopolitan,\*node_modules\*,\*\.git\*,\*.\*py\*};
+	grep $@ -IE --color=auto --exclude-dir={\*.venv\*,cosmopolitan,\*node_modules\*,\*\.git\*,\*.\*py\*,\*htmlcov\*};
 }
 
 function grepr() { _grep_wrapper -r $@ .; }
