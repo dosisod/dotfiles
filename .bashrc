@@ -22,6 +22,8 @@ export DVDCSS_CACHE="$XDG_DATA_HOME"/dvdcss
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
 export ASPELL_CONF="per-conf $XDG_CONFIG_HOME/aspell/aspell.conf; personal $XDG_CONFIG_HOME/aspell/en.pws; repl $XDG_CONFIG_HOME/aspell/en.prepl"
+export SQLITE_HISTORY="$XDG_CACHE_HOME"/sqlite_history
+unset DEBUGINFOD_URLS
 
 HISTCONTROL=ignorespace
 HISTSIZE=-1
@@ -97,6 +99,7 @@ alias v="$EDITOR -i NONE"
 alias vi="$EDITOR -i NONE"
 alias vim="$EDITOR -i NONE"
 alias t="cd ~/git/todo && $EDITOR x"
+alias k="cal9000"
 
 #git related aliases
 alias gpom="git push origin master"
@@ -130,7 +133,7 @@ alias sedr="find . -type f -print0 | xargs -0 sed"
 function mk() { mkdir $@ && cd $@; }
 alias k9="kill -9"
 alias g="_grep_wrapper"
-alias gdb="gdb -ex='set history save on' -ex='set history filename /tmp/gdb_history'"
+alias gdb="gdb -n -x $XDG_CONFIG_HOME/gdb/init"
 alias cd=z
 alias http="python3 -m http.server"
 

@@ -20,6 +20,7 @@ cp {,~/}.config/gtk-3.0/settings.ini
 cp {,~/}.config/Code/User/settings.json
 cp {,~/}.config/ptpython/config.py
 cp {,~/}.config/python/pythonrc
+cp {,~/}.config/gdb/init
 cp {,~/}.bashrc
 cp {,~/}.xinitrc
 cp {,~/}.local/share/gnupg/gpg-agent.conf

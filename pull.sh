@@ -8,6 +8,7 @@ cp {~/,}.config/Code\ -\ OSS/User/settings.json
 cp {~/,}.config/Code/User/settings.json
 cp {~/,}.config/python/pythonrc
 cp {~/,}.config/ptpython/config.py
+cp {~/,}.config/gdb/init
 cp {~/,}.bashrc
 cp {~/,}.xinitrc
 cp {~/,}.local/share/gnupg/gpg-agent.conf
