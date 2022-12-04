@@ -23,6 +23,7 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
 export ASPELL_CONF="per-conf $XDG_CONFIG_HOME/aspell/aspell.conf; personal $XDG_CONFIG_HOME/aspell/en.pws; repl $XDG_CONFIG_HOME/aspell/en.prepl"
 export SQLITE_HISTORY="$XDG_CACHE_HOME"/sqlite_history
+export FZF_DEFAULT_OPTS="--extended --cycle --no-separator"
 unset DEBUGINFOD_URLS
 
 HISTCONTROL=ignorespace
@@ -51,7 +52,6 @@ bind -m vi-insert 'Control-l: clear-screen'
 
 export EDITOR=nvim
 export VISUAL=nvim
-export VIMRUNTIME=~/git/neovim/runtime
 
 export PATH=$PATH:~/.local/bin:./node_modules/.bin:~/.cargo/bin:~/.local/share/go/bin/
 
@@ -131,6 +131,7 @@ alias ....="cd ../../.."
 alias sedri="find . -type f -print0 | xargs -0 sed -i"
 alias sedr="find . -type f -print0 | xargs -0 sed"
 function mk() { mkdir $@ && cd $@; }
+function mkp() { mkdir $@ && touch $@/__init__.py; }
 alias k9="kill -9"
 alias g="_grep_wrapper"
 alias gdb="gdb -n -x $XDG_CONFIG_HOME/gdb/init"

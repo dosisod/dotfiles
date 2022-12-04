@@ -41,7 +41,7 @@ wifi_new_connection() {
 	}
 
 	bssid=$(printf "$wifi" | grep -o "..:..:..:..:..:..")
-	password=$(msg "Password")
+	password=$(printf "" | dmenu -p "Password" -P)
 
 	expr "${#password}" ">" 8 > /dev/null
 	[ "$?" = "1" ] && {
