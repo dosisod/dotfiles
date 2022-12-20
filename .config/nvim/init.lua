@@ -33,6 +33,8 @@ Plug('neoclide/coc.nvim', {branch = 'release'})
 Plug('numToStr/Comment.nvim')
 Plug('norcalli/nvim-colorizer.lua')
 Plug('~/git/tree-sitter-skull')
+Plug('~/git/tree-sitter-mypyc', {rtp = 'mypyc_test_cases'})
+Plug('~/git/tree-sitter-mypyc', {rtp = 'mypyc_ir'})
 Plug('tpope/vim-repeat')
 Plug('fatih/vim-go', {['do'] = ':GoUpdateBinaries'})
 Plug('nvim-treesitter/nvim-treesitter-context')
@@ -82,6 +84,7 @@ map('n', 'K', ':call ShowDocumentation()<CR>', {noremap = true, silent = true})
 
 create_autocmd({'BufNewFile', 'BufRead'}, {pattern = '*.pyi', command = 'set syntax=python'})
 create_autocmd({'BufNewFile', 'BufRead'}, {pattern = '*.sk', command = 'set syntax=skull filetype=skull'})
+create_autocmd({'BufNewFile', 'BufRead'}, {pattern = '*.test', command = 'set syntax=mypyc_test_cases filetype=mypyc_test_cases'})
 create_autocmd({'BufNewFile', 'BufRead'}, {pattern = '*.c', command = 'set syntax=c filetype=c'})
 create_autocmd({'BufNewFile', 'BufRead'}, {pattern = '*.h', command = 'set syntax=c filetype=c'})
 create_autocmd({'BufNewFile', 'BufRead'}, {pattern = '*.ll', command = 'set syntax=llvm filetype=llvm'})
@@ -105,7 +108,7 @@ create_autocmd('FileType', {
 })
 
 require('nvim-treesitter.configs').setup {
-  ensure_installed = { 'c', 'cpp', 'javascript', 'typescript', 'python', 'html', 'skull', 'query', 'rust', 'go' },
+  ensure_installed = { 'c', 'cpp', 'javascript', 'typescript', 'python', 'html', 'css', 'skull', 'mypyc_test_cases', 'mypyc_ir', 'query', 'rust', 'go' },
   highlight = {
     enable = true
   }
@@ -121,6 +124,23 @@ parser_config.skull = {
     requires_generate_from_grammar = false,
   },
   filetype = 'sk',
+}
+parser_config.mypyc_test_cases = {
+  install_info = {
+    url = "~/git/tree-sitter-mypyc",
+    files = {"mypyc_test_cases/src/parser.c"},
+    generate_requires_npm = false,
+    requires_generate_from_grammar = false,
+  },
+  filetype = "test",
+}
+parser_config.mypyc_ir = {
+  install_info = {
+    url = "~/git/tree-sitter-mypyc",
+    files = {"mypyc_ir/src/parser.c"},
+    generate_requires_npm = false,
+    requires_generate_from_grammar = false,
+  },
 }
 
 require('Comment').setup()
