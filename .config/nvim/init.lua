@@ -108,7 +108,7 @@ create_autocmd('FileType', {
 })
 
 require('nvim-treesitter.configs').setup {
-  ensure_installed = { 'c', 'cpp', 'javascript', 'typescript', 'python', 'html', 'css', 'skull', 'mypyc_test_cases', 'mypyc_ir', 'query', 'rust', 'go' },
+  ensure_installed = { 'c', 'cpp', 'javascript', 'typescript', 'python', 'html', 'css', 'skull', 'mypyc_test_cases', 'mypyc_ir', 'query', 'rust', 'go', 'lua', 'help' },
   highlight = {
     enable = true
   }
