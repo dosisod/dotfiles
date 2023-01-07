@@ -1,3 +1,13 @@
+-- Required to be put above plug install
+vim.g.coc_global_extensions = {
+  'coc-tsserver',
+  'coc-rust-analyzer',
+  'coc-pyright',
+  'coc-json',
+  'coc-yaml',
+  'coc-docker',
+}
+
 -- To install vim-plug, follow instructions at https://github.com/junegunn/vim-plug/wiki/tutorial
 vim.call('plug#begin', '~/.cache/nvim/')
 
