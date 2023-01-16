@@ -1,7 +1,8 @@
 #!/bin/bash
 
-PS4=""
+set -e
 set -x
+PS4=""
 
 mkdir -p \
 	~/.config/nvim \
@@ -11,6 +12,7 @@ mkdir -p \
 	~/.config/.gimp-2.8 \
 	~/.config/ptpython \
 	~/.config/python \
+	~/.config/sqlite3 \
 	~/.local/share/gnupg
 
 cp -r {,~/}.config/nvim

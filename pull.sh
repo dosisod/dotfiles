@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 cp -r ~/.config/nvim/* .config/nvim
 cp {~/,}.config/git/ignore
 cp {~/,}.config/gtk-3.0/settings.ini
@@ -8,6 +10,7 @@ cp {~/,}.config/Code/User/settings.json
 cp {~/,}.config/python/pythonrc
 cp {~/,}.config/ptpython/config.py
 cp {~/,}.config/gdb/init
+cp {~/,}.config/sqlite3/sqliterc
 cp {~/,}.bashrc
 cp {~/,}.xinitrc
 cp {~/,}.local/share/gnupg/gpg-agent.conf
