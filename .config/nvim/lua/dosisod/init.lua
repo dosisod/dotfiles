@@ -6,3 +6,4 @@ require("dosisod.autocommands")
 require("dosisod.sets")
 
 require("dosisod.treesitter")
+require("dosisod.cicada")
