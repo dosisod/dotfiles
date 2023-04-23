@@ -15,6 +15,7 @@ cp {~/,}.bashrc
 cp {~/,}.xinitrc
 cp {~/,}.local/share/gnupg/gpg-agent.conf
 cp ~/.local/bin/*.sh .local/bin
+cp ~/.local/bin/json_min .local/bin
 
 command -v code > /dev/null && code --list-extensions > vscode-extentions || true
 
