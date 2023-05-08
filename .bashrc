@@ -136,6 +136,7 @@ alias g="_grep_wrapper"
 alias gdb="gdb -n -x $XDG_CONFIG_HOME/gdb/init"
 alias cd=z
 alias http="python3 -m http.server"
+alias xmod="chmod +x"
 
 function _grep_wrapper() {
 	grep $@ -IE --color=auto --exclude-dir={\*.venv\*,cosmopolitan,\*node_modules\*,\*\.git\*,\*.\*py\*,\*htmlcov\*};
