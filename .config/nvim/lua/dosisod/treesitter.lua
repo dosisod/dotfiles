@@ -16,6 +16,7 @@ require('nvim-treesitter.configs').setup {
     'rust',
     'skull',
     'typescript',
+    'v',
   },
   highlight = {
     enable = true

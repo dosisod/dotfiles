@@ -7,6 +7,7 @@ vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {pattern = '*.h', command
 vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {pattern = '*.ll', command = 'set syntax=llvm filetype=llvm'})
 vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {pattern = 'Dockerfile.*', command = 'set syntax=dockerfile filetype=dockerfile'})
 vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {pattern = '*.py', command = 'set commentstring=#\\ %s'})
+vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {pattern = '*.v', command = 'set syntax=v filetype=v'})
 
 -- Set preferred indents for built-in file types
 vim.api.nvim_create_autocmd('FileType', {
