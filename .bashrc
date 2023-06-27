@@ -1,12 +1,10 @@
-#default ubuntu junk
-
 # If not running interactively, don't do anything
 case $- in
 	*i*) ;;
 	*) return;;
 esac
 
-# append to the history file, don't overwrite it
+# Append to the history file, don't overwrite it
 shopt -s histappend
 
 export XDG_DATA_HOME=$HOME/.local/share
@@ -31,21 +29,16 @@ HISTSIZE=-1
 HISTFILESIZE=-1
 HISTFILE=$XDG_CACHE_HOME/bash/history
 
-# update screen szie
+# Update screen szie
 shopt -s checkwinsize
 
-# better globbing
+# Better globbing
 shopt -s globstar
-
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
-
-#actual bashrc file
 
 set -o vi
 bind -m vi-insert 'Control-l: clear-screen'
@@ -55,28 +48,30 @@ export VISUAL=nvim
 
 export PATH=$PATH:~/.local/bin:./node_modules/.bin:~/.cargo/bin:~/.local/share/go/bin/
 
+# Emulate old Kali Linux PS1 colors
 export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=1;34:ln=32:bn=32:se=0"
 
-#enable flask hotreloading, disable dotnet telemetry
+# Enable flask hotreloading, disable dotnet telemetry
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export FLASK_DEBUG=1
 
-#disable certain files
+# Disable certain files
 export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc"
 export LESSHISTFILE=/dev/null
 export LESS="-FRIX~"
 export NODE_REPL_HISTORY=/dev/null
 
-#allows for control+s in vim
+# Allows for control+s in vim
 stty -ixon
 
+# Use backslash since `cd` is aliased in zoxide
 \cd "$(cat /tmp/__pwd 2> /dev/null)"
 
 __git_branch() {
-	branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
+	branch="$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
 
-	[ "$branch" = "master" ] &&
-		printf "\e[0;32m(master) " || {
+	[ "$branch" = "master" -o "$branch" = "main" ] &&
+		printf "\e[0;32m($branch) " || {
 		[ ! -z "$branch" ] &&
 			printf "\e[0;33m($branch) ";
 	}
@@ -88,11 +83,12 @@ __status_code() {
 
 export PS1="\$(__status_code \$?)\[\e[1;31m\]\u \[\e[1;34m\]\W \$(__git_branch)\[\e[38;5;244m\]$ \[\e[0m\]"
 
+# Python related aliases
 alias p3="python3"
 alias vv="source .venv/bin/activate"
 alias mvv="python3 -m venv .venv && source .venv/bin/activate"
 
-#makes accessing files easier
+# Makes accessing files easier
 alias nvimrc="$EDITOR -i NONE ~/.config/nvim/init.lua"
 alias bashrc="$EDITOR -i NONE ~/.bashrc"
 alias v="$EDITOR -i NONE"
@@ -101,7 +97,7 @@ alias vim="$EDITOR -i NONE"
 alias t="cd ~/git/todo && $EDITOR x"
 alias k="cal9000"
 
-#git related aliases
+# Git related aliases
 alias gpom="git push origin master"
 alias gpoh="git push origin HEAD"
 alias gcm="git commit -m"
@@ -133,8 +129,6 @@ alias sedr="find . -type f -print0 | xargs -0 sed"
 function mk() { mkdir $@ && cd $@; }
 function mkp() { mkdir $@ && touch $@/__init__.py; }
 alias k9="kill -9"
-alias g="_grep_wrapper"
-alias gdb="gdb -n -x $XDG_CONFIG_HOME/gdb/init"
 alias cd=z
 alias http="python3 -m http.server"
 alias xmod="chmod +x"
