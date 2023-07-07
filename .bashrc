@@ -126,8 +126,8 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias sedri="find . -type f -print0 | xargs -0 sed -i"
 alias sedr="find . -type f -print0 | xargs -0 sed"
-function mk() { mkdir $@ && cd $@; }
-function mkp() { mkdir $@ && touch $@/__init__.py; }
+function mk() { mkdir -p $@ && cd $@; }
+function mkp() { mkdir -p $@ && touch $@/__init__.py; }
 alias k9="kill -9"
 alias cd=z
 alias http="python3 -m http.server"
