@@ -16,7 +16,7 @@ background_set() {
 	background="$(background_select)"
 	[ -z "$background" ] && exit 1;
 
-	feh --no-fehbg --bg-fill "$BACKGROUND_DIR/$background"
+	feh --no-fehbg --bg-max "$BACKGROUND_DIR/$background"
 }
 
 background_rename() {

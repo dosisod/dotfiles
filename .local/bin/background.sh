@@ -1,3 +1,3 @@
 #!/bin/sh
 
-feh --no-fehbg --bg-fill --randomize ~/Pictures/wallpapers
+feh --no-fehbg --bg-max --randomize ~/Pictures/wallpapers
