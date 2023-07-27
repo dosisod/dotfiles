@@ -9,7 +9,7 @@ msg() {
 }
 
 background_select() {
-	find . -type f | sort | dmenu -i -l 25
+	find -L . -type f | sort | dmenu -i -l 25
 }
 
 background_set() {
