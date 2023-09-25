@@ -86,7 +86,7 @@ export PS1="\$(__status_code \$?)\[\e[1;31m\]\u \[\e[1;34m\]\W \$(__git_branch)\
 # Python related aliases
 alias p3="python3"
 alias vv="source .venv/bin/activate"
-alias mvv="python3 -m venv .venv && source .venv/bin/activate"
+alias mvv="python3 -m venv .venv --without-pip && source .venv/bin/activate"
 
 # Makes accessing files easier
 alias nvimrc="$EDITOR -i NONE ~/.config/nvim/init.lua"

@@ -16,7 +16,6 @@ local Plug = vim.fn['plug#']
 Plug('airblade/vim-gitgutter')
 Plug('junegunn/fzf', {dir = '~/.config/.fzf'})
 Plug('junegunn/fzf.vim')
-Plug('Glench/Vim-Jinja2-Syntax')
 Plug('tpope/vim-surround')
 Plug('morhetz/gruvbox')
 Plug('dosisod/vim-skull')
