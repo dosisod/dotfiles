@@ -17,6 +17,7 @@ require('nvim-treesitter.configs').setup {
     'skull',
     'typescript',
     'v',
+    'kotlin',
   },
   highlight = {
     enable = true
