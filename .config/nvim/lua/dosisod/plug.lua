@@ -7,6 +7,7 @@ vim.g.coc_global_extensions = {
   'coc-yaml',
   'coc-docker',
   'coc-kotlin',
+  'coc-java',
 }
 
 -- To install vim-plug, follow instructions at https://github.com/junegunn/vim-plug/wiki/tutorial

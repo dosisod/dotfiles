@@ -18,6 +18,7 @@ require('nvim-treesitter.configs').setup {
     'typescript',
     'v',
     'kotlin',
+    'java',
   },
   highlight = {
     enable = true

@@ -11,7 +11,7 @@ vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {pattern = '*.v', command
 
 -- Set preferred indents for built-in file types
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'python,java,rust',
+  pattern = 'python,java,rust,kotlin',
   command = 'setlocal ts=4 sw=4 sts=4 expandtab'
 })
 
