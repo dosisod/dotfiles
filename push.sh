@@ -13,7 +13,9 @@ mkdir -p \
 	~/.config/ptpython \
 	~/.config/python \
 	~/.config/sqlite3 \
-	~/.local/share/gnupg
+	~/.config/gdb \
+	~/.local/share/gnupg \
+	~/.local/bin
 
 cp -r {,~/}.config/nvim
 cp {,~/}.config/git/ignore
