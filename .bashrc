@@ -1,4 +1,4 @@
-# If not running interactively, don't do anything
+# Exit early if we're not running an interactive shell
 case $- in
 	*i*) ;;
 	*) return;;
@@ -23,6 +23,7 @@ export ASPELL_CONF="per-conf $XDG_CONFIG_HOME/aspell/aspell.conf; personal $XDG_
 export SQLITE_HISTORY="$XDG_CACHE_HOME"/sqlite_history
 export FZF_DEFAULT_OPTS="--extended --cycle --no-separator"
 export PYTHON_KEYRING_BACKEND=keyring.backends.fail.Keyring
+export PIP_REQUIRE_VIRTUALENV=true
 
 HISTCONTROL=ignorespace
 HISTSIZE=-1
@@ -38,15 +39,13 @@ shopt -s globstar
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 
-[ -f ~/.bash_aliases ] && . ~/.bash_aliases
-
 set -o vi
 bind -m vi-insert 'Control-l: clear-screen'
 
 export EDITOR=nvim
 export VISUAL=nvim
 
-export PATH=$PATH:~/.local/bin:./node_modules/.bin:~/.cargo/bin:~/.local/share/go/bin/
+export PATH=~/.cache/cargo/bin:$PATH:~/.local/bin:./node_modules/.bin:~/.local/share/go/bin/
 
 # Emulate old Kali Linux PS1 colors
 export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=1;34:ln=32:bn=32:se=0"
@@ -86,7 +85,7 @@ export PS1="\$(__status_code \$?)\[\e[1;31m\]\u \[\e[1;34m\]\W \$(__git_branch)\
 # Python related aliases
 alias p3="python3"
 alias vv="source .venv/bin/activate"
-alias mvv="python3 -m venv .venv --without-pip && source .venv/bin/activate"
+alias mvv="python3 -m venv .venv && source .venv/bin/activate"
 
 # Makes accessing files easier
 alias nvimrc="$EDITOR -i NONE ~/.config/nvim/init.lua"
@@ -149,5 +148,3 @@ alias psx="ps aux | grep"
 [ -f /usr/share/bash-completion/completions/git ] && source /usr/share/bash-completion/completions/git
 
 eval "$(zoxide init bash)"
-
-. "$CARGO_HOME/env"
