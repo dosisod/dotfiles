@@ -43,5 +43,7 @@ cp .local/bin/json_min ~/.local/bin/json_min
 
 [ -z "$(command -v flameshot)" ] || {
 	flameshot_config=.config/flameshot/flameshot.ini
+	mkdir ~/.config/flameshot
+	mkdir ~/Pictures
 	sed "s|HOME|$HOME|" $flameshot_config > ~/$flameshot_config
 }
