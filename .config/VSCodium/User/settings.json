@@ -122,7 +122,6 @@
   "workbench.colorTheme": "Gruvbox Dark (Hard)",
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editor.labelFormat": "short",
-  "workbench.editor.showTabs": false,
-"workbench.startupEditor": "none",
-"python.languageServer": "Pylance",
+  "workbench.editor.showTabs": "single",
+  "workbench.startupEditor": "none",
 }

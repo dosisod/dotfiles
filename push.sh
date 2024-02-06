@@ -8,33 +8,38 @@ mkdir -p \
 	~/.config/nvim \
 	~/.config/git \
 	~/.config/gtk-3.0 \
-	~/.config/Code/User \
+	~/.config/VSCodium/User \
 	~/.config/.gimp-2.8 \
 	~/.config/ptpython \
 	~/.config/python \
 	~/.config/sqlite3 \
 	~/.config/gdb \
 	~/.local/share/gnupg \
-	~/.local/bin
+	~/.local/bin \
+	~/.cache/bash
 
-cp -r {,~/}.config/nvim
+cp -r .config/nvim/* ~/.config/nvim
 cp {,~/}.config/git/ignore
 cp {,~/}.config/gtk-3.0/settings.ini
-cp {,~/}.config/Code/User/settings.json
+cp {,~/}.config/VSCodium/User/settings.json
 cp {,~/}.config/ptpython/config.py
 cp {,~/}.config/python/pythonrc
 cp {,~/}.config/gdb/gdbinit
+cp {,~/}.config/sqlite3/sqliterc
 cp {,~/}.bashrc
 cp {,~/}.xinitrc
 cp {,~/}.local/share/gnupg/gpg-agent.conf
 cp .local/bin/*.sh ~/.local/bin
 cp .local/bin/json_min ~/.local/bin/json_min
 
-[ -z "$(command -v code)" ] || {
-	VSCODE_CONFIG=".config/Code - OSS/User/settings.json"
-	cp -f "./$VSCODE_CONFIG" ~/"$VSCODE_CONFIG"
-	cp -f "$VSCODE_CONFIG" ~/.config/Code/User/settings.json
-	cat ./vscode-extentions | xargs -L 1 code --install-extension
+[ -z "$(command -v vscodium)" ] || {
+	VSCODIUM_DIR=".config/VSCodium/User"
+	VSCODIUM_CONFIG="$VSCODIUM_DIR/settings.json"
+	mkdir -p ~/"$VSCODIUM_DIR"
+	cp -f "$VSCODIUM_CONFIG" ~/"$VSCODIUM_CONFIG"
+	set +e
+	cat ./vscodium-extentions | xargs -L 1 vscodium --install-extension
+	set -e
 }
 
 [ -z "$(command -v npm)" ] || {
@@ -43,7 +48,9 @@ cp .local/bin/json_min ~/.local/bin/json_min
 
 [ -z "$(command -v flameshot)" ] || {
 	flameshot_config=.config/flameshot/flameshot.ini
-	mkdir ~/.config/flameshot
-	mkdir ~/Pictures
+	mkdir -p ~/.config/flameshot
+	mkdir -p ~/Pictures
 	sed "s|HOME|$HOME|" $flameshot_config > ~/$flameshot_config
 }
+
+[ -f patch.sh ] && ./patch.sh
